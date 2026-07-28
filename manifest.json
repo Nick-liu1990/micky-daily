@@ -1,6 +1,6 @@
 {
   "date": "2026-07-28",
-  "updated": "2026-07-28T17:15:00+08:00",
+  "updated": "2026-07-28T17:59:02.365192",
   "sections": {
     "morning": {
       "label": "早报 · 08:30",
@@ -11,7 +11,16 @@
           "icon": "app",
           "emoji": "📊",
           "title": "APP调研商机日报",
-          "tags": [{"cls": "tag-hot", "text": "10条商机"}, {"cls": "tag-new", "text": "已更新"}],
+          "tags": [
+            {
+              "cls": "tag-hot",
+              "text": "10条商机"
+            },
+            {
+              "cls": "tag-new",
+              "text": "已更新"
+            }
+          ],
           "meta": "刘亦菲音色 · 约 3 分 24 秒",
           "audio": "",
           "summary": "<strong>今日最高优先级：GLP-1用药伴侣APP</strong>（月搜索11万次，零专门产品）。低垂果实3条：Albert理财1.98星、RoadReady驾驶记录崩溃、Lidl Plus强制注册。高付费率3条：Claude/CapCut/Google One。GitHub趋势2条：OpenCut 7.5万星、OfficeCLI 1.8万星。"
@@ -21,7 +30,12 @@
           "icon": "ceo",
           "emoji": "📋",
           "title": "CEO早间简报",
-          "tags": [{"cls": "tag-new", "text": "已更新"}],
+          "tags": [
+            {
+              "cls": "tag-new",
+              "text": "已更新"
+            }
+          ],
           "meta": "08:30 · 约 2 分 15 秒",
           "audio": "",
           "summary": "8个项目巡检：AI量化今日有1只突破候选待确认；APP调研完成10条新商机；AI日报覆盖5条头条。2个待决策项。"
@@ -31,7 +45,16 @@
           "icon": "ai",
           "emoji": "🤖",
           "title": "AI行业日报",
-          "tags": [{"cls": "tag-trending", "text": "5条头条"}, {"cls": "tag-new", "text": "已更新"}],
+          "tags": [
+            {
+              "cls": "tag-trending",
+              "text": "5条头条"
+            },
+            {
+              "cls": "tag-new",
+              "text": "已更新"
+            }
+          ],
           "meta": "08:30 · 约 2 分 48 秒",
           "audio": "",
           "summary": "OpenAI发布GPT-5o多模态实时对话；Anthropic Claude APP冲入iOS收入Top10；Google Gemini更新长上下文200万token。"
@@ -46,11 +69,16 @@
           "id": "ceo_evening",
           "icon": "ceo",
           "emoji": "📋",
-          "title": "CEO晚间简报",
-          "tags": [{"cls": "tag-new", "text": "待更新"}],
-          "meta": "18:30 · 约 2 分 30 秒",
-          "audio": "",
-          "summary": "今日复盘：8个项目实际推进情况。AI量化信号结算结果、APP调研推送效果、AI日报阅读数据。明日重点建议。"
+          "title": "CEO晚间简报（测试）",
+          "tags": [
+            {
+              "cls": "tag-test",
+              "text": "测试"
+            }
+          ],
+          "meta": "推送链路测试",
+          "audio": "audio/2026-07-28/test_audio.mp3",
+          "summary": "这是一条测试推送验证18:30自动化链路是否正常"
         }
       ]
     },
@@ -63,7 +91,16 @@
           "icon": "quant",
           "emoji": "📈",
           "title": "盘前信号扫描",
-          "tags": [{"cls": "tag-money", "text": "盘前推送"}, {"cls": "tag-new", "text": "09:00"}],
+          "tags": [
+            {
+              "cls": "tag-money",
+              "text": "盘前推送"
+            },
+            {
+              "cls": "tag-new",
+              "text": "09:00"
+            }
+          ],
           "meta": "刘亦菲音色 · 约 1 分 30 秒",
           "audio": "",
           "summary": "大盘regime判断 + 今日突破候选。候选信号仅供参考，09:30开盘前给最终买/不买决策。"
@@ -73,7 +110,16 @@
           "icon": "quant",
           "emoji": "📊",
           "title": "盘后复盘",
-          "tags": [{"cls": "tag-money", "text": "盘后推送"}, {"cls": "tag-new", "text": "15:30"}],
+          "tags": [
+            {
+              "cls": "tag-money",
+              "text": "盘后推送"
+            },
+            {
+              "cls": "tag-new",
+              "text": "15:30"
+            }
+          ],
           "meta": "15:30 · 约 1 分 45 秒",
           "audio": "",
           "summary": "持仓浮盈/浮亏、今日结算信号实际盈亏R值、明日候选初步判断。"
