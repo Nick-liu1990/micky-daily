@@ -1,6 +1,6 @@
 {
   "date": "2026-07-28",
-  "updated": "2026-07-28T17:59:02.365192",
+  "updated": "2026-07-28T18:42:49.952008",
   "sections": {
     "morning": {
       "label": "早报 · 08:30",
@@ -69,16 +69,16 @@
           "id": "ceo_evening",
           "icon": "ceo",
           "emoji": "📋",
-          "title": "CEO晚间简报（测试）",
+          "title": "CEO晚间简报",
           "tags": [
             {
-              "cls": "tag-test",
-              "text": "测试"
+              "cls": "tag-new",
+              "text": "已更新"
             }
           ],
-          "meta": "推送链路测试",
-          "audio": "audio/2026-07-28/test_audio.mp3",
-          "summary": "这是一条测试推送验证18:30自动化链路是否正常"
+          "meta": "刘亦菲音色 · 约2分",
+          "audio": "audio/2026-07-28/daily_audio.mp3",
+          "summary": "今日8个项目复盘摘要"
         }
       ]
     },
