@@ -527,133 +527,106 @@ body {
 </div>
 
 <script>
-const data = {
-  morning: {
-    label: '早报 · 08:30',
-    sub: '3 条播报 · 开车场景优化',
-    hero: {
-      icon: 'app',
-      emoji: '📊',
-      title: 'APP调研商机日报',
-      tags: [{cls: 'tag-hot', text: '10条商机'}, {cls: 'tag-new', text: '已更新'}],
-      meta: '刘亦菲音色 · 约 3 分 24 秒',
-      audioFile: 'daily_audio.mp3',
-      summary: '<strong>今日最高优先级：GLP-1用药伴侣APP</strong>（月搜索11万次，零专门产品）。低垂果实3条：Albert理财1.98星、RoadReady驾驶记录崩溃、Lidl Plus强制注册。高付费率3条：Claude/CapCut/Google One。GitHub趋势2条：OpenCut 7.5万星、OfficeCLI 1.8万星。'
-    },
-    list: [
-      {
-        icon: 'ceo', emoji: '📋', title: 'CEO早间简报',
-        meta: '08:30 · 约 2 分 15 秒', audioFile: 'ceo_morning.mp3',
-        summary: '8个项目巡检：AI量化今日有1只突破候选待确认；APP调研完成10条新商机；AI日报覆盖5条头条。2个待决策项。'
-      },
-      {
-        icon: 'ai', emoji: '🤖', title: 'AI行业日报',
-        meta: '08:30 · 约 2 分 48 秒', audioFile: 'ai_daily.mp3',
-        summary: 'OpenAI发布GPT-5o多模态实时对话；Anthropic Claude APP冲入iOS收入Top10；Google Gemini更新长上下文200万token。'
-      }
-    ]
-  },
-  evening: {
-    label: '晚报 · 18:30',
-    sub: '1 条播报',
-    hero: {
-      icon: 'ceo',
-      emoji: '📋',
-      title: 'CEO晚间简报',
-      tags: [{cls: 'tag-new', text: '待更新'}],
-      meta: '18:30 · 约 2 分 30 秒',
-      audioFile: 'ceo_evening.mp3',
-      summary: '今日复盘：8个项目实际推进情况。AI量化信号结算结果、APP调研推送效果、AI日报阅读数据。明日重点建议。'
-    },
-    list: []
-  },
-  quant: {
-    label: 'AI量化 · A股信号',
-    sub: '2 条播报 · 按交易时间推送',
-    hero: {
-      icon: 'quant',
-      emoji: '📈',
-      title: '盘前信号扫描',
-      tags: [{cls: 'tag-money', text: '盘前推送'}, {cls: 'tag-new', text: '09:00'}],
-      meta: '刘亦菲音色 · 约 1 分 30 秒',
-      audioFile: 'quant_signal.mp3',
-      summary: '大盘regime判断 + 今日突破候选。候选信号仅供参考，09:30开盘前给最终买/不买决策。数据来源：signal_engine.py + signal_ledger.json。'
-    },
-    list: [
-      {
-        icon: 'quant', emoji: '📊', title: '盘后复盘',
-        meta: '15:30 · 约 1 分 45 秒', audioFile: 'quant_review.mp3',
-        summary: '持仓浮盈/浮亏、今日结算信号实际盈亏R值、明日候选初步判断。A股15:00收盘后15:30推送复盘。'
-      }
-    ]
-  }
-};
-
+let manifest = null;
 let currentTab = 'morning';
 let currentAudio = null;
 let currentCardId = null;
-let progressInterval = null;
 let isPaused = false;
-let simulatedProgress = 0;
+
+async function loadData() {
+  try {
+    const resp = await fetch('manifest.json?t=' + Date.now());
+    manifest = await resp.json();
+    if (manifest.date) {
+      const d = new Date(manifest.date);
+      const weekdays = ['周日','周一','周二','周三','周四','周五','周六'];
+      document.querySelector('.header-date').textContent =
+        d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日 · ' + weekdays[d.getDay()];
+    }
+    renderContent();
+  } catch(e) {
+    document.getElementById('content').innerHTML =
+      '<div class="empty-state"><div class="empty-state-icon">📡</div>' +
+      '<div class="empty-state-text">加载失败</div>' +
+      '<div class="empty-state-hint">请稍后刷新重试</div></div>';
+  }
+}
 
 function switchTab(tab, el) {
   currentTab = tab;
   document.querySelectorAll('.segment').forEach(s => s.classList.remove('active'));
   el.classList.add('active');
-  const idx = ['morning','evening','quant'].indexOf(tab);
-  document.getElementById('segmentBg').style.transform = `translateX(${idx * 100}%)`;
+  var idx = ['morning','evening','quant'].indexOf(tab);
+  document.getElementById('segmentBg').style.transform = 'translateX(' + idx * 100 + '%)';
   renderContent();
 }
 
 function renderContent() {
-  const section = data[currentTab];
-  const container = document.getElementById('content');
-  const hero = section.hero;
+  if (!manifest) return;
+  var section = manifest.sections[currentTab];
+  if (!section) return;
+  var container = document.getElementById('content');
+  var items = section.items || [];
+  var hero = items[0];
+  var list = items.slice(1);
 
-  let html = `
-    <div class="section-header fade-in">
-      <div class="section-title">${section.label}</div>
-      <div class="section-sub">${section.sub}</div>
-    </div>
-    <div class="hero-card fade-in" onclick="playHero()">
-      <div class="hero-main">
-        <div class="hero-cover ${hero.icon}">${hero.emoji}</div>
-        <div class="hero-info">
-          <div class="hero-title">${hero.title}</div>
-          <div class="hero-tags">${hero.tags.map(t => `<span class="tag ${t.cls}">${t.text}</span>`).join('')}</div>
-          <div class="hero-meta"><span>${hero.meta}</span></div>
-        </div>
-        <button class="hero-play" id="heroPlayBtn" onclick="event.stopPropagation(); playHero()">▶</button>
-      </div>
-      <div class="player-inline" id="heroPlayer">
-        <span class="time" id="heroCur">0:00</span>
-        <div class="progress-track"><div class="progress-fill" id="heroProgress"></div></div>
-        <span class="time" id="heroDur">--:--</span>
-      </div>
-      <div class="hero-summary">${hero.summary}</div>
-    </div>
-  `;
+  if (!hero) {
+    container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📭</div><div class="empty-state-text">暂无播报</div></div>';
+    return;
+  }
 
-  if (section.list.length > 0) {
+  var hasAudio = hero.audio && hero.audio.length > 0;
+  var tagsHtml = (hero.tags || []).map(function(t) { return '<span class="tag ' + t.cls + '">' + t.text + '</span>'; }).join('');
+
+  var html = '<div class="section-header fade-in">' +
+    '<div class="section-title">' + section.label + '</div>' +
+    '<div class="section-sub">' + (section.sub || '') + '</div></div>' +
+    '<div class="hero-card fade-in"' + (hasAudio ? ' onclick="playItem(0)"' : '') + '>' +
+    '<div class="hero-main">' +
+    '<div class="hero-cover ' + hero.icon + '">' + hero.emoji + '</div>' +
+    '<div class="hero-info">' +
+    '<div class="hero-title">' + hero.title + '</div>' +
+    '<div class="hero-tags">' + tagsHtml + '</div>' +
+    '<div class="hero-meta"><span>' + (hero.meta || '') + '</span></div>' +
+    '</div>' +
+    (hasAudio
+      ? '<button class="hero-play" id="playBtn0" onclick="event.stopPropagation(); playItem(0)">▶</button>'
+      : '<span class="tag tag-time" style="font-size:12px;padding:6px 12px;">待更新</span>') +
+    '</div>';
+
+  if (hasAudio) {
+    html += '<div class="player-inline" id="player0">' +
+      '<span class="time" id="cur0">0:00</span>' +
+      '<div class="progress-track"><div class="progress-fill" id="progress0"></div></div>' +
+      '<span class="time" id="dur0">--:--</span></div>';
+  }
+  if (hero.summary) {
+    html += '<div class="hero-summary">' + hero.summary + '</div>';
+  }
+  html += '</div>';
+
+  if (list.length > 0) {
     html += '<div class="card-list">';
-    section.list.forEach((card, i) => {
-      html += `
-        <div class="compact-card fade-in" onclick="playList(${i})" style="animation-delay:${(i+1)*0.05}s">
-          <div class="compact-cover ${card.icon}">${card.emoji}</div>
-          <div class="compact-body">
-            <div class="compact-title">${card.title}</div>
-            <div class="compact-meta">${card.meta}</div>
-          </div>
-          <button class="compact-play" id="listPlayBtn${i}" onclick="event.stopPropagation(); playList(${i})">▶</button>
-        </div>
-        <div class="hero-card fade-in player-inline" id="listPlayer${i}" style="margin-top:-6px;margin-bottom:10px;display:none">
-          <div style="display:flex;align-items:center;gap:10px;width:100%">
-            <span class="time" id="listCur${i}">0:00</span>
-            <div class="progress-track"><div class="progress-fill" id="listProgress${i}"></div></div>
-            <span class="time" id="listDur${i}">--:--</span>
-          </div>
-        </div>
-      `;
+    list.forEach(function(card, i) {
+      var idx = i + 1;
+      var cardHasAudio = card.audio && card.audio.length > 0;
+      html += '<div class="compact-card fade-in" style="animation-delay:' + idx * 0.05 + 's"' +
+        (cardHasAudio ? ' onclick="playItem(' + idx + ')"' : '') + '>' +
+        '<div class="compact-cover ' + card.icon + '">' + card.emoji + '</div>' +
+        '<div class="compact-body">' +
+        '<div class="compact-title">' + card.title + '</div>' +
+        '<div class="compact-meta">' + (card.meta || '') + '</div></div>' +
+        (cardHasAudio
+          ? '<button class="compact-play" id="playBtn' + idx + '" onclick="event.stopPropagation(); playItem(' + idx + ')">▶</button>'
+          : '<span class="tag tag-time" style="font-size:11px;">待更新</span>') +
+        '</div>';
+      if (cardHasAudio) {
+        html += '<div class="hero-card fade-in player-inline" id="player' + idx + '" style="margin-top:-6px;margin-bottom:10px;display:none">' +
+          '<div style="display:flex;align-items:center;gap:10px;width:100%">' +
+          '<span class="time" id="cur' + idx + '">0:00</span>' +
+          '<div class="progress-track"><div class="progress-fill" id="progress' + idx + '"></div></div>' +
+          '<span class="time" id="dur' + idx + '">--:--</span></div></div>';
+      }
     });
     html += '</div>';
   }
@@ -662,90 +635,86 @@ function renderContent() {
 }
 
 function formatTime(sec) {
-  const m = Math.floor(sec / 60);
-  const s = Math.floor(sec % 60);
-  return `${m}:${String(s).padStart(2, '0')}`;
+  var m = Math.floor(sec / 60);
+  var s = Math.floor(sec % 60);
+  return m + ':' + String(s).padStart(2, '0');
 }
 
 function stopAll() {
-  if (progressInterval) { clearInterval(progressInterval); progressInterval = null; }
   if (currentAudio) { currentAudio.pause(); currentAudio = null; }
-  document.querySelectorAll('.hero-play, .compact-play').forEach(b => { b.innerHTML = '▶'; b.classList.remove('playing'); });
-  document.querySelectorAll('.player-inline').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.hero-play, .compact-play').forEach(function(b) { b.innerHTML = '▶'; b.classList.remove('playing'); });
+  document.querySelectorAll('.player-inline').forEach(function(p) { p.classList.remove('active'); });
   document.getElementById('nowPlayingBar').classList.remove('show');
   currentCardId = null;
   isPaused = false;
-  simulatedProgress = 0;
 }
 
-function simulatePlayback(card, idPrefix, totalSec = 180) {
+function playItem(index) {
+  var section = manifest.sections[currentTab];
+  var item = section.items[index];
+  if (!item || !item.audio) return;
+
+  if (currentCardId === index) {
+    if (isPaused) { currentAudio.play(); isPaused = false; }
+    else { currentAudio.pause(); isPaused = true; }
+    updatePlayButton(index, isPaused);
+    return;
+  }
+
   stopAll();
-  currentCardId = idPrefix;
-  simulatedProgress = 0;
-  isPaused = false;
+  currentCardId = index;
 
-  const playBtn = document.getElementById(idPrefix === 'hero' ? 'heroPlayBtn' : 'listPlayBtn' + idPrefix.split('-')[1]);
-  if (playBtn) { playBtn.innerHTML = '❚❚'; playBtn.classList.add('playing'); }
-
-  const player = document.getElementById(idPrefix === 'hero' ? 'heroPlayer' : 'listPlayer' + idPrefix.split('-')[1]);
+  var btn = document.getElementById('playBtn' + index);
+  if (btn) { btn.innerHTML = '❚❚'; btn.classList.add('playing'); }
+  var player = document.getElementById('player' + index);
   if (player) player.classList.add('active');
 
-  const bar = document.getElementById('nowPlayingBar');
+  var bar = document.getElementById('nowPlayingBar');
   bar.classList.add('show');
-  document.getElementById('npTitle').textContent = card.title;
-  document.getElementById('npSub').textContent = card.meta;
-  document.getElementById('npCover').textContent = card.emoji;
+  document.getElementById('npTitle').textContent = item.title;
+  document.getElementById('npSub').textContent = item.meta || '';
+  document.getElementById('npCover').textContent = item.emoji;
   document.getElementById('npPlayBtn').innerHTML = '❚❚';
 
-  document.getElementById(idPrefix === 'hero' ? 'heroDur' : 'listDur' + idPrefix.split('-')[1]).textContent = formatTime(totalSec);
-
-  currentAudio = { pause: () => { clearInterval(progressInterval); } };
-  progressInterval = setInterval(() => {
-    if (isPaused) return;
-    simulatedProgress += 100 / (totalSec * 10);
-    if (simulatedProgress >= 100) {
-      stopAll();
-      return;
+  currentAudio = new Audio(item.audio);
+  currentAudio.addEventListener('loadedmetadata', function() {
+    var dur = document.getElementById('dur' + index);
+    if (dur) dur.textContent = formatTime(currentAudio.duration);
+  });
+  currentAudio.addEventListener('timeupdate', function() {
+    if (currentAudio.duration) {
+      var pct = (currentAudio.currentTime / currentAudio.duration) * 100;
+      var prog = document.getElementById('progress' + index);
+      if (prog) prog.style.width = pct + '%';
+      var cur = document.getElementById('cur' + index);
+      if (cur) cur.textContent = formatTime(currentAudio.currentTime);
+      document.getElementById('npProgressBar').style.width = pct + '%';
     }
-    const curSec = Math.floor(totalSec * simulatedProgress / 100);
-    const timeStr = formatTime(curSec);
-    const progressEl = document.getElementById(idPrefix === 'hero' ? 'heroProgress' : 'listProgress' + idPrefix.split('-')[1]);
-    if (progressEl) progressEl.style.width = simulatedProgress + '%';
-    const curEl = document.getElementById(idPrefix === 'hero' ? 'heroCur' : 'listCur' + idPrefix.split('-')[1]);
-    if (curEl) curEl.textContent = timeStr;
-    document.getElementById('npProgressBar').style.width = simulatedProgress + '%';
-  }, 100);
+  });
+  currentAudio.addEventListener('ended', function() { stopAll(); });
+  currentAudio.play().catch(function(e) {
+    console.error('Audio play failed:', e);
+    var cur = document.getElementById('cur' + index);
+    if (cur) cur.textContent = '加载失败';
+  });
 }
 
-function playHero() {
-  const hero = data[currentTab].hero;
-  const totalSec = parseDuration(hero.meta);
-  simulatePlayback(hero, 'hero', totalSec);
-}
-
-function playList(index) {
-  const card = data[currentTab].list[index];
-  const totalSec = parseDuration(card.meta);
-  simulatePlayback(card, 'list-' + index, totalSec);
-}
-
-function parseDuration(meta) {
-  const m = meta.match(/(\d+)\s*分\s*(\d+)\s*秒/);
-  if (m) return parseInt(m[1]) * 60 + parseInt(m[2]);
-  return 180;
+function updatePlayButton(index, paused) {
+  var btn = document.getElementById('playBtn' + index);
+  var npBtn = document.getElementById('npPlayBtn');
+  var icon = paused ? '▶' : '❚❚';
+  if (btn) btn.innerHTML = icon;
+  if (npBtn) npBtn.innerHTML = icon;
 }
 
 function togglePlay() {
-  if (!currentCardId) return;
-  isPaused = !isPaused;
-  const npBtn = document.getElementById('npPlayBtn');
-  const playBtn = document.getElementById(currentCardId === 'hero' ? 'heroPlayBtn' : 'listPlayBtn' + currentCardId.split('-')[1]);
-  npBtn.innerHTML = isPaused ? '▶' : '❚❚';
-  if (playBtn) { playBtn.innerHTML = isPaused ? '▶' : '❚❚'; }
+  if (currentCardId === null) return;
+  if (isPaused) { currentAudio.play(); isPaused = false; }
+  else { currentAudio.pause(); isPaused = true; }
+  updatePlayButton(currentCardId, isPaused);
 }
 
-// Initial render
-renderContent();
+loadData();
 </script>
 
 </body>
