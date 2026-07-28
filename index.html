@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#F2F2F7">
+<title>Micky 每日简报 · 2026-07-28</title>
+<style>
+:root {
+  --bg: #F2F2F7;
+  --card: #FFFFFF;
+  --text: #1C1C1E;
+  --text-secondary: #6C6C70;
+  --text-tertiary: #9A9AA2;
+  --separator: rgba(0,0,0,0.08);
+  --blue: #007AFF;
+  --blue-soft: #EAF2FF;
+  --green: #34C759;
+  --orange: #FF9F0A;
+  --orange-soft: #FFF4E0;
+  --purple: #AF52DE;
+  --purple-soft: #F5E8FC;
+  --red: #FF3B30;
+  --teal: #5AC8FA;
+  --teal-soft: #E8F7FE;
+  --radius-xl: 22px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'PingFang SC', 'Helvetica Neue', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: calc(100px + env(safe-area-inset-bottom));
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.header {
+  padding: 20px 20px 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(242,242,247,0.86);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 0.5px solid rgba(0,0,0,0.05);
+}
+.header-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.header-title {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  line-height: 1.05;
+}
+.header-date {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  font-weight: 500;
+}
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green);
+  background: rgba(52,199,89,0.10);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* iOS Segmented Control */
+.segmented {
+  display: flex;
+  background: rgba(0,0,0,0.06);
+  border-radius: 9px;
+  padding: 2px;
+  position: relative;
+}
+.segment {
+  flex: 1;
+  padding: 8px 4px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  transition: color 0.22s ease;
+  -webkit-appearance: none;
+}
+.segment.active {
+  color: var(--text);
+  font-weight: 600;
+}
+.segment-bg {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: calc(100% - 4px);
+  width: calc(33.333% - 2.7px);
+  background: var(--card);
+  border-radius: 7px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 0.5px 0 rgba(0,0,0,0.04);
+  transition: transform 0.28s cubic-bezier(0.25, 0.1, 0.25, 1);
+  z-index: 0;
+}
+.segment-time {
+  display: block;
+  font-size: 10px;
+  color: var(--text-tertiary);
+  margin-top: 1px;
+  font-weight: 500;
+}
+.segment.active .segment-time { color: var(--text-secondary); }
+
+/* Content */
+.content {
+  padding: 16px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 24px 0 12px;
+  padding: 0 4px;
+}
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+.section-sub {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+/* Hero Card */
+.hero-card {
+  background: var(--card);
+  border-radius: var(--radius-xl);
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 0.5px solid var(--separator);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.hero-card:active {
+  transform: scale(0.985);
+  box-shadow: var(--shadow-sm);
+}
+.hero-main {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.hero-cover {
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+.hero-cover.app { background: linear-gradient(135deg, #FFF4E0 0%, #FFE5C1 100%); }
+.hero-cover.ceo { background: linear-gradient(135deg, #EAF2FF 0%, #D4E5FF 100%); }
+.hero-cover.ai { background: linear-gradient(135deg, #F5E8FC 0%, #ECD4FA 100%); }
+.hero-cover.quant { background: linear-gradient(135deg, #E8F7FE 0%, #D0EFFC 100%); }
+.hero-info { flex: 1; min-width: 0; }
+.hero-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
+}
+.hero-tags { margin-bottom: 8px; }
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.tag-hot { background: #FFECEC; color: var(--red); }
+.tag-new { background: var(--blue-soft); color: var(--blue); }
+.tag-trending { background: var(--purple-soft); color: var(--purple); }
+.tag-money { background: #E4FAEC; color: #1A8C3E; }
+.tag-time { background: rgba(0,0,0,0.05); color: var(--text-secondary); }
+.hero-meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-meta-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+}
+.hero-play {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blue);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,122,255,0.28);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.hero-play:active { transform: scale(0.9); }
+.hero-play.playing { background: var(--red); box-shadow: 0 4px 12px rgba(255,59,48,0.28); }
+.hero-summary {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 0.5px solid var(--separator);
+}
+.hero-summary strong { color: var(--text); font-weight: 600; }
+
+/* Compact Card List */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.compact-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+  border: 0.5px solid var(--separator);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.compact-card:active {
+  transform: scale(0.985);
+  box-shadow: var(--shadow-sm);
+}
+.compact-cover {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.compact-cover.app { background: var(--orange-soft); }
+.compact-cover.ceo { background: var(--blue-soft); }
+.compact-cover.ai { background: var(--purple-soft); }
+.compact-cover.quant { background: var(--teal-soft); }
+.compact-body { flex: 1; min-width: 0; }
+.compact-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+}
+.compact-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.compact-play {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.compact-play:active { transform: scale(0.88); }
+.compact-play.playing { background: #FFEEED; color: var(--red); }
+
+/* Progress & Player Inline */
+.player-inline {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 0.5px solid var(--separator);
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+.player-inline.active { display: flex; }
+.time {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  min-width: 36px;
+  text-align: center;
+}
+.progress-track {
+  flex: 1;
+  height: 5px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--blue);
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--text-secondary);
+}
+.empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 14px;
+  opacity: 0.35;
+}
+.empty-state-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+.empty-state-hint {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  margin-top: 6px;
+}
+
+/* Now Playing Bar */
+.now-playing-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border-top: 0.5px solid rgba(0,0,0,0.08);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  display: none;
+  align-items: center;
+  gap: 14px;
+  z-index: 200;
+}
+.now-playing-bar.show { display: flex; }
+.np-cover {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  background: var(--blue-soft);
+}
+.np-info { flex: 1; min-width: 0; }
+.np-title {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.1px;
+}
+.np-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.np-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blue);
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.12s ease;
+}
+.np-btn:active { transform: scale(0.9); }
+.np-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0,0,0,0.06);
+}
+.np-progress-bar {
+  height: 100%;
+  background: var(--blue);
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.fade-in { animation: fadeIn 0.35s cubic-bezier(0.25, 0.1, 0.25, 1); }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --card: #1C1C1E;
+    --text: #FFFFFF;
+    --text-secondary: #98989F;
+    --text-tertiary: #66666C;
+    --separator: rgba(255,255,255,0.10);
+    --blue-soft: rgba(10,132,255,0.18);
+    --orange-soft: rgba(255,159,10,0.18);
+    --purple-soft: rgba(175,82,222,0.18);
+    --teal-soft: rgba(90,200,250,0.18);
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.24);
+  }
+  body { background: var(--bg); }
+  .header { background: rgba(0,0,0,0.78); border-bottom-color: rgba(255,255,255,0.08); }
+  .segmented { background: rgba(255,255,255,0.12); }
+  .now-playing-bar { background: rgba(28,28,30,0.88); border-top-color: rgba(255,255,255,0.10); }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <div class="header-title">Micky 每日简报</div>
+      <div class="header-date">2026年7月28日 · 周二</div>
+    </div>
+    <div class="header-badge"><span class="pulse-dot"></span> 今日已更新</div>
+  </div>
+  <div class="segmented" id="segmented">
+    <div class="segment-bg" id="segmentBg"></div>
+    <button class="segment active" onclick="switchTab('morning', this)">
+      早报<span class="segment-time">08:30</span>
+    </button>
+    <button class="segment" onclick="switchTab('evening', this)">
+      晚报<span class="segment-time">18:30</span>
+    </button>
+    <button class="segment" onclick="switchTab('quant', this)">
+      AI量化<span class="segment-time">盘前/盘后</span>
+    </button>
+  </div>
+</div>
+
+<div class="content" id="content"></div>
+
+<div class="now-playing-bar" id="nowPlayingBar">
+  <div class="np-progress"><div class="np-progress-bar" id="npProgressBar"></div></div>
+  <div class="np-cover" id="npCover">🎧</div>
+  <div class="np-info">
+    <div class="np-title" id="npTitle">--</div>
+    <div class="np-sub" id="npSub">--</div>
+  </div>
+  <button class="np-btn" id="npPlayBtn" onclick="togglePlay()">❚❚</button>
+</div>
+
+<script>
+const data = {
+  morning: {
+    label: '早报 · 08:30',
+    sub: '3 条播报 · 开车场景优化',
+    hero: {
+      icon: 'app',
+      emoji: '📊',
+      title: 'APP调研商机日报',
+      tags: [{cls: 'tag-hot', text: '10条商机'}, {cls: 'tag-new', text: '已更新'}],
+      meta: '刘亦菲音色 · 约 3 分 24 秒',
+      audioFile: 'daily_audio.mp3',
+      summary: '<strong>今日最高优先级：GLP-1用药伴侣APP</strong>（月搜索11万次，零专门产品）。低垂果实3条：Albert理财1.98星、RoadReady驾驶记录崩溃、Lidl Plus强制注册。高付费率3条：Claude/CapCut/Google One。GitHub趋势2条：OpenCut 7.5万星、OfficeCLI 1.8万星。'
+    },
+    list: [
+      {
+        icon: 'ceo', emoji: '📋', title: 'CEO早间简报',
+        meta: '08:30 · 约 2 分 15 秒', audioFile: 'ceo_morning.mp3',
+        summary: '8个项目巡检：AI量化今日有1只突破候选待确认；APP调研完成10条新商机；AI日报覆盖5条头条。2个待决策项。'
+      },
+      {
+        icon: 'ai', emoji: '🤖', title: 'AI行业日报',
+        meta: '08:30 · 约 2 分 48 秒', audioFile: 'ai_daily.mp3',
+        summary: 'OpenAI发布GPT-5o多模态实时对话；Anthropic Claude APP冲入iOS收入Top10；Google Gemini更新长上下文200万token。'
+      }
+    ]
+  },
+  evening: {
+    label: '晚报 · 18:30',
+    sub: '1 条播报',
+    hero: {
+      icon: 'ceo',
+      emoji: '📋',
+      title: 'CEO晚间简报',
+      tags: [{cls: 'tag-new', text: '待更新'}],
+      meta: '18:30 · 约 2 分 30 秒',
+      audioFile: 'ceo_evening.mp3',
+      summary: '今日复盘：8个项目实际推进情况。AI量化信号结算结果、APP调研推送效果、AI日报阅读数据。明日重点建议。'
+    },
+    list: []
+  },
+  quant: {
+    label: 'AI量化 · A股信号',
+    sub: '2 条播报 · 按交易时间推送',
+    hero: {
+      icon: 'quant',
+      emoji: '📈',
+      title: '盘前信号扫描',
+      tags: [{cls: 'tag-money', text: '盘前推送'}, {cls: 'tag-new', text: '09:00'}],
+      meta: '刘亦菲音色 · 约 1 分 30 秒',
+      audioFile: 'quant_signal.mp3',
+      summary: '大盘regime判断 + 今日突破候选。候选信号仅供参考，09:30开盘前给最终买/不买决策。数据来源：signal_engine.py + signal_ledger.json。'
+    },
+    list: [
+      {
+        icon: 'quant', emoji: '📊', title: '盘后复盘',
+        meta: '15:30 · 约 1 分 45 秒', audioFile: 'quant_review.mp3',
+        summary: '持仓浮盈/浮亏、今日结算信号实际盈亏R值、明日候选初步判断。A股15:00收盘后15:30推送复盘。'
+      }
+    ]
+  }
+};
+
+let currentTab = 'morning';
+let currentAudio = null;
+let currentCardId = null;
+let progressInterval = null;
+let isPaused = false;
+let simulatedProgress = 0;
+
+function switchTab(tab, el) {
+  currentTab = tab;
+  document.querySelectorAll('.segment').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+  const idx = ['morning','evening','quant'].indexOf(tab);
+  document.getElementById('segmentBg').style.transform = `translateX(${idx * 100}%)`;
+  renderContent();
+}
+
+function renderContent() {
+  const section = data[currentTab];
+  const container = document.getElementById('content');
+  const hero = section.hero;
+
+  let html = `
+    <div class="section-header fade-in">
+      <div class="section-title">${section.label}</div>
+      <div class="section-sub">${section.sub}</div>
+    </div>
+    <div class="hero-card fade-in" onclick="playHero()">
+      <div class="hero-main">
+        <div class="hero-cover ${hero.icon}">${hero.emoji}</div>
+        <div class="hero-info">
+          <div class="hero-title">${hero.title}</div>
+          <div class="hero-tags">${hero.tags.map(t => `<span class="tag ${t.cls}">${t.text}</span>`).join('')}</div>
+          <div class="hero-meta"><span>${hero.meta}</span></div>
+        </div>
+        <button class="hero-play" id="heroPlayBtn" onclick="event.stopPropagation(); playHero()">▶</button>
+      </div>
+      <div class="player-inline" id="heroPlayer">
+        <span class="time" id="heroCur">0:00</span>
+        <div class="progress-track"><div class="progress-fill" id="heroProgress"></div></div>
+        <span class="time" id="heroDur">--:--</span>
+      </div>
+      <div class="hero-summary">${hero.summary}</div>
+    </div>
+  `;
+
+  if (section.list.length > 0) {
+    html += '<div class="card-list">';
+    section.list.forEach((card, i) => {
+      html += `
+        <div class="compact-card fade-in" onclick="playList(${i})" style="animation-delay:${(i+1)*0.05}s">
+          <div class="compact-cover ${card.icon}">${card.emoji}</div>
+          <div class="compact-body">
+            <div class="compact-title">${card.title}</div>
+            <div class="compact-meta">${card.meta}</div>
+          </div>
+          <button class="compact-play" id="listPlayBtn${i}" onclick="event.stopPropagation(); playList(${i})">▶</button>
+        </div>
+        <div class="hero-card fade-in player-inline" id="listPlayer${i}" style="margin-top:-6px;margin-bottom:10px;display:none">
+          <div style="display:flex;align-items:center;gap:10px;width:100%">
+            <span class="time" id="listCur${i}">0:00</span>
+            <div class="progress-track"><div class="progress-fill" id="listProgress${i}"></div></div>
+            <span class="time" id="listDur${i}">--:--</span>
+          </div>
+        </div>
+      `;
+    });
+    html += '</div>';
+  }
+
+  container.innerHTML = html;
+}
+
+function formatTime(sec) {
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m}:${String(s).padStart(2, '0')}`;
+}
+
+function stopAll() {
+  if (progressInterval) { clearInterval(progressInterval); progressInterval = null; }
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  document.querySelectorAll('.hero-play, .compact-play').forEach(b => { b.innerHTML = '▶'; b.classList.remove('playing'); });
+  document.querySelectorAll('.player-inline').forEach(p => p.classList.remove('active'));
+  document.getElementById('nowPlayingBar').classList.remove('show');
+  currentCardId = null;
+  isPaused = false;
+  simulatedProgress = 0;
+}
+
+function simulatePlayback(card, idPrefix, totalSec = 180) {
+  stopAll();
+  currentCardId = idPrefix;
+  simulatedProgress = 0;
+  isPaused = false;
+
+  const playBtn = document.getElementById(idPrefix === 'hero' ? 'heroPlayBtn' : 'listPlayBtn' + idPrefix.split('-')[1]);
+  if (playBtn) { playBtn.innerHTML = '❚❚'; playBtn.classList.add('playing'); }
+
+  const player = document.getElementById(idPrefix === 'hero' ? 'heroPlayer' : 'listPlayer' + idPrefix.split('-')[1]);
+  if (player) player.classList.add('active');
+
+  const bar = document.getElementById('nowPlayingBar');
+  bar.classList.add('show');
+  document.getElementById('npTitle').textContent = card.title;
+  document.getElementById('npSub').textContent = card.meta;
+  document.getElementById('npCover').textContent = card.emoji;
+  document.getElementById('npPlayBtn').innerHTML = '❚❚';
+
+  document.getElementById(idPrefix === 'hero' ? 'heroDur' : 'listDur' + idPrefix.split('-')[1]).textContent = formatTime(totalSec);
+
+  currentAudio = { pause: () => { clearInterval(progressInterval); } };
+  progressInterval = setInterval(() => {
+    if (isPaused) return;
+    simulatedProgress += 100 / (totalSec * 10);
+    if (simulatedProgress >= 100) {
+      stopAll();
+      return;
+    }
+    const curSec = Math.floor(totalSec * simulatedProgress / 100);
+    const timeStr = formatTime(curSec);
+    const progressEl = document.getElementById(idPrefix === 'hero' ? 'heroProgress' : 'listProgress' + idPrefix.split('-')[1]);
+    if (progressEl) progressEl.style.width = simulatedProgress + '%';
+    const curEl = document.getElementById(idPrefix === 'hero' ? 'heroCur' : 'listCur' + idPrefix.split('-')[1]);
+    if (curEl) curEl.textContent = timeStr;
+    document.getElementById('npProgressBar').style.width = simulatedProgress + '%';
+  }, 100);
+}
+
+function playHero() {
+  const hero = data[currentTab].hero;
+  const totalSec = parseDuration(hero.meta);
+  simulatePlayback(hero, 'hero', totalSec);
+}
+
+function playList(index) {
+  const card = data[currentTab].list[index];
+  const totalSec = parseDuration(card.meta);
+  simulatePlayback(card, 'list-' + index, totalSec);
+}
+
+function parseDuration(meta) {
+  const m = meta.match(/(\d+)\s*分\s*(\d+)\s*秒/);
+  if (m) return parseInt(m[1]) * 60 + parseInt(m[2]);
+  return 180;
+}
+
+function togglePlay() {
+  if (!currentCardId) return;
+  isPaused = !isPaused;
+  const npBtn = document.getElementById('npPlayBtn');
+  const playBtn = document.getElementById(currentCardId === 'hero' ? 'heroPlayBtn' : 'listPlayBtn' + currentCardId.split('-')[1]);
+  npBtn.innerHTML = isPaused ? '▶' : '❚❚';
+  if (playBtn) { playBtn.innerHTML = isPaused ? '▶' : '❚❚'; }
+}
+
+// Initial render
+renderContent();
+</script>
+
+</body>
+</html>
