@@ -1,6 +1,6 @@
 {
   "date": "2026-07-29",
-  "updated": "2026-07-29T08:42:48.306381",
+  "updated": "2026-07-29T08:46:07.769290",
   "sections": {
     "morning": {
       "label": "早报 · 08:30",
@@ -14,16 +14,20 @@
           "tags": [
             {
               "cls": "tag-hot",
-              "text": "10条商机"
+              "text": "12条商机"
             },
             {
               "cls": "tag-new",
-              "text": "已更新"
+              "text": "短剧$140亿"
+            },
+            {
+              "cls": "tag-hot",
+              "text": "GitHub 71K星"
             }
           ],
-          "meta": "刘亦菲音色 · 约 3 分 24 秒",
-          "audio": "",
-          "summary": "<strong>今日最高优先级：GLP-1用药伴侣APP</strong>（月搜索11万次，零专门产品）。低垂果实3条：Albert理财1.98星、RoadReady驾驶记录崩溃、Lidl Plus强制注册。高付费率3条：Claude/CapCut/Google One。GitHub趋势2条：OpenCut 7.5万星、OfficeCLI 1.8万星。"
+          "meta": "刘亦菲音色 · 14段 · 7.3MB",
+          "audio": "audio/2026-07-29/daily_audio.mp3",
+          "summary": "今日12条商机：短剧混合变现40亿市场、Cleo AI评分暴跌、Hailuo AI 1.6星、Claude定价投诉、恋与深空退坑潮、OpenCut 71K星、meetily本地会议助手、OmniRoute AI网关、Vibe-Trading量化框架、voicebox语音工作室、老年人照护APP、围绝经期健康管理、宠物健康分诊"
         },
         {
           "id": "ceo_morning",
