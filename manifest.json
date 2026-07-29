@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-28",
-  "updated": "2026-07-28T18:42:49.952008",
+  "date": "2026-07-29",
+  "updated": "2026-07-29T08:42:08.062200",
   "sections": {
     "morning": {
       "label": "早报 · 08:30",
@@ -32,13 +32,13 @@
           "title": "CEO早间简报",
           "tags": [
             {
-              "cls": "tag-new",
-              "text": "已更新"
+              "cls": "tag-hot",
+              "text": "FOMC今日"
             }
           ],
-          "meta": "08:30 · 约 2 分 15 秒",
-          "audio": "",
-          "summary": "8个项目巡检：AI量化今日有1只突破候选待确认；APP调研完成10条新商机；AI日报覆盖5条头条。2个待决策项。"
+          "meta": "刘亦菲音色 · 约2.5分",
+          "audio": "audio/2026-07-29/daily_audio.mp3",
+          "summary": "今日8个项目巡检摘要：FOMC决议14:00 / AI日报恢复 / 掌印滞后23天 / TokenBill建议归档 / APP调研语音就绪"
         },
         {
           "id": "ai_daily",
