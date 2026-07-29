@@ -1,6 +1,6 @@
 {
   "date": "2026-07-29",
-  "updated": "2026-07-29T08:42:08.062200",
+  "updated": "2026-07-29T08:42:48.306381",
   "sections": {
     "morning": {
       "label": "早报 · 08:30",
@@ -55,9 +55,9 @@
               "text": "已更新"
             }
           ],
-          "meta": "08:30 · 约 2 分 48 秒",
-          "audio": "",
-          "summary": "OpenAI发布GPT-5o多模态实时对话；Anthropic Claude APP冲入iOS收入Top10；Google Gemini更新长上下文200万token。"
+          "meta": "刘亦菲音色 · 约3分",
+          "audio": "audio/2026-07-29/daily_audio.mp3",
+          "summary": "今日AI圈5条头条摘要"
         }
       ]
     },
