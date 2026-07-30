@@ -1,6 +1,6 @@
 {
   "date": "2026-07-30",
-  "updated": "2026-07-30T08:23:42.061799",
+  "updated": "2026-07-30T08:28:40.564268",
   "sections": {
     "morning": {
       "label": "早报 · 08:30",
@@ -14,20 +14,16 @@
           "tags": [
             {
               "cls": "tag-hot",
-              "text": "12条商机"
+              "text": "10条商机"
             },
             {
               "cls": "tag-new",
-              "text": "短剧$140亿"
-            },
-            {
-              "cls": "tag-hot",
-              "text": "GitHub 71K星"
+              "text": "已更新"
             }
           ],
-          "meta": "刘亦菲音色 · 14段 · 7.3MB",
-          "audio": "audio/2026-07-29/daily_audio.mp3",
-          "summary": "今日12条商机：短剧混合变现40亿市场、Cleo AI评分暴跌、Hailuo AI 1.6星、Claude定价投诉、恋与深空退坑潮、OpenCut 71K星、meetily本地会议助手、OmniRoute AI网关、Vibe-Trading量化框架、voicebox语音工作室、老年人照护APP、围绝经期健康管理、宠物健康分诊"
+          "meta": "刘亦菲音色 · 8分5秒",
+          "audio": "audio/2026-07-30/daily_audio_20260730.mp3",
+          "summary": "今日10条商机：1.Easy Homescreen无广告桌面（美国/欧洲银发族）2.Google Gemini答案校验工具（全球）3.Health Connect隐私健康看板（美国/欧洲）4.TikTok创作者订阅工具（全球）5.ChatGPT垂直场景助手（全球）6.电工/水管工专业SaaS（美国/英澳加）7.独居安全守护APP（中国）8.GLP-1用药伴侣（美国）9.Strix安全巡检SaaS（美国/欧盟）10.ponytail代码简化审查（全球）"
         },
         {
           "id": "ceo_morning",
