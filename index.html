@@ -37,11 +37,11 @@ body {
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
-  padding-bottom: calc(100px + env(safe-area-inset-bottom));
+  padding-bottom: calc(80px + env(safe-area-inset-bottom));
   -webkit-font-smoothing: antialiased;
 }
 
-/* Header */
+/* ===== Header ===== */
 .header {
   padding: 20px 20px 12px;
   position: sticky;
@@ -94,7 +94,7 @@ body {
   50% { opacity: 0.5; transform: scale(0.85); }
 }
 
-/* iOS Segmented Control */
+/* ===== Segmented Control ===== */
 .segmented {
   display: flex;
   background: rgba(0,0,0,0.06);
@@ -143,7 +143,7 @@ body {
 }
 .segment.active .segment-time { color: var(--text-secondary); }
 
-/* Content */
+/* ===== Content ===== */
 .content {
   padding: 16px;
   max-width: 680px;
@@ -167,7 +167,7 @@ body {
   font-weight: 500;
 }
 
-/* Uniform Cards */
+/* ===== Cards ===== */
 .card-list {
   display: flex;
   flex-direction: column;
@@ -183,14 +183,11 @@ body {
   box-shadow: var(--shadow-sm);
   border: 0.5px solid var(--separator);
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  transition: transform 0.15s ease;
   text-decoration: none;
   color: inherit;
 }
-.card:active {
-  transform: scale(0.985);
-  box-shadow: var(--shadow-sm);
-}
+.card:active { transform: scale(0.985); }
 .card-cover {
   width: 56px;
   height: 56px;
@@ -215,9 +212,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.card-tags {
-  margin-bottom: 5px;
-}
+.card-tags { margin-bottom: 5px; }
 .tag {
   display: inline-block;
   font-size: 11px;
@@ -264,53 +259,190 @@ body {
   cursor: not-allowed;
 }
 
-/* Empty State */
+/* ===== Detail View ===== */
+#detailView { display: none; }
+#detailView.show { display: block; }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--blue);
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+}
+.hero-card {
+  background: var(--card);
+  border-radius: var(--radius-xl);
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 0.5px solid var(--separator);
+}
+.hero-main {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.hero-cover {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+.hero-cover.app { background: linear-gradient(135deg, #FFF4E0 0%, #FFE5C1 100%); }
+.hero-cover.ceo { background: linear-gradient(135deg, #EAF2FF 0%, #D4E5FF 100%); }
+.hero-cover.ai { background: linear-gradient(135deg, #F5E8FC 0%, #ECD4FA 100%); }
+.hero-cover.quant { background: linear-gradient(135deg, #E8F7FE 0%, #D0EFFC 100%); }
+.hero-info { flex: 1; min-width: 0; }
+.hero-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+}
+.hero-meta {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.hero-play {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blue);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,122,255,0.28);
+  transition: transform 0.15s ease;
+}
+.hero-play:active { transform: scale(0.9); }
+.hero-play.playing { background: var(--red); box-shadow: 0 4px 12px rgba(255,59,48,0.28); }
+.detail-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 24px 0 12px;
+  padding: 0 4px;
+  letter-spacing: -0.2px;
+}
+
+/* ===== Transcript ===== */
+.transcript-card {
+  background: var(--card);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 0.5px solid var(--separator);
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text);
+}
+.transcript-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 20px 0 10px;
+  color: var(--text);
+}
+.transcript-card h3:first-child { margin-top: 0; }
+.transcript-card p { margin-bottom: 12px; }
+.transcript-card ol {
+  list-style: none;
+  counter-reset: item;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+.transcript-card ol li {
+  counter-increment: item;
+  padding: 10px 0 10px 36px;
+  position: relative;
+  border-bottom: 0.5px solid var(--separator);
+}
+.transcript-card ol li:last-child { border-bottom: none; }
+.transcript-card ol li::before {
+  content: counter(item);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.transcript-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+.transcript-card ul li {
+  padding: 6px 0 6px 20px;
+  position: relative;
+}
+.transcript-card ul li::before {
+  content: '·';
+  position: absolute;
+  left: 6px;
+  font-size: 20px;
+  color: var(--text-tertiary);
+}
+.transcript-card strong { font-weight: 700; }
+
+/* ===== Empty State ===== */
 .empty-state {
   text-align: center;
   padding: 60px 24px;
   color: var(--text-secondary);
 }
-.empty-state-icon {
-  font-size: 48px;
-  margin-bottom: 14px;
-  opacity: 0.35;
-}
-.empty-state-text {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text);
-}
-.empty-state-hint {
-  font-size: 14px;
-  color: var(--text-tertiary);
-  margin-top: 6px;
-}
+.empty-state-icon { font-size: 48px; margin-bottom: 14px; opacity: 0.35; }
+.empty-state-text { font-size: 16px; font-weight: 600; color: var(--text); }
+.empty-state-hint { font-size: 14px; color: var(--text-tertiary); margin-top: 6px; }
 
-/* Now Playing Bar */
+/* ===== Global Now Playing Bar ===== */
 .now-playing-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255,255,255,0.82);
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   border-top: 0.5px solid rgba(0,0,0,0.08);
-  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
   display: none;
   align-items: center;
-  gap: 14px;
-  z-index: 200;
+  gap: 12px;
+  z-index: 300;
 }
 .now-playing-bar.show { display: flex; }
 .np-cover {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 22px;
   flex-shrink: 0;
   background: var(--blue-soft);
 }
@@ -327,15 +459,16 @@ body {
   font-size: 12px;
   color: var(--text-secondary);
   font-weight: 500;
+  font-variant-numeric: tabular-nums;
 }
 .np-btn {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   border: none;
   background: var(--blue);
   color: white;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -349,13 +482,16 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 3px;
   background: rgba(0,0,0,0.06);
+  cursor: pointer;
 }
 .np-progress-bar {
   height: 100%;
   background: var(--blue);
   width: 0%;
+  border-radius: 0 2px 2px 0;
+  transition: width 0.1s linear;
 }
 
 .fade-in { animation: fadeIn 0.35s cubic-bezier(0.25, 0.1, 0.25, 1); }
@@ -381,38 +517,66 @@ body {
   body { background: var(--bg); }
   .header { background: rgba(0,0,0,0.78); border-bottom-color: rgba(255,255,255,0.08); }
   .segmented { background: rgba(255,255,255,0.12); }
-  .now-playing-bar { background: rgba(28,28,30,0.88); border-top-color: rgba(255,255,255,0.10); }
+  .now-playing-bar { background: rgba(28,28,30,0.92); border-top-color: rgba(255,255,255,0.10); }
 }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="header-top">
-    <div>
-      <div class="header-title">Micky 每日简报</div>
-      <div class="header-date" id="headerDate">--</div>
+<!-- ===== LIST VIEW ===== -->
+<div id="listView">
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="header-title">Micky 每日简报</div>
+        <div class="header-date" id="headerDate">--</div>
+      </div>
+      <div class="header-badge"><span class="pulse-dot"></span> 今日已更新</div>
     </div>
-    <div class="header-badge"><span class="pulse-dot"></span> 今日已更新</div>
+    <div class="segmented" id="segmented">
+      <div class="segment-bg" id="segmentBg"></div>
+      <button class="segment active" onclick="switchTab('morning', this)">
+        早报<span class="segment-time">08:30</span>
+      </button>
+      <button class="segment" onclick="switchTab('evening', this)">
+        晚报<span class="segment-time">18:30</span>
+      </button>
+      <button class="segment" onclick="switchTab('quant', this)">
+        AI量化<span class="segment-time">盘前/盘后</span>
+      </button>
+    </div>
   </div>
-  <div class="segmented" id="segmented">
-    <div class="segment-bg" id="segmentBg"></div>
-    <button class="segment active" onclick="switchTab('morning', this)">
-      早报<span class="segment-time">08:30</span>
-    </button>
-    <button class="segment" onclick="switchTab('evening', this)">
-      晚报<span class="segment-time">18:30</span>
-    </button>
-    <button class="segment" onclick="switchTab('quant', this)">
-      AI量化<span class="segment-time">盘前/盘后</span>
-    </button>
+  <div class="content" id="content"></div>
+</div>
+
+<!-- ===== DETAIL VIEW ===== -->
+<div id="detailView">
+  <div class="header">
+    <button class="back-btn" onclick="showList()">← 返回</button>
+    <div class="header-title" id="detailTitle" style="font-size:26px">--</div>
+    <div class="header-meta" id="detailMeta" style="font-size:14px;color:var(--text-secondary);margin-top:6px;font-weight:500">--</div>
+  </div>
+  <div class="content">
+    <div class="hero-card">
+      <div class="hero-main">
+        <div class="hero-cover" id="detailCover">🎧</div>
+        <div class="hero-info">
+          <div class="hero-title" id="detailHeroTitle">--</div>
+          <div class="hero-meta" id="detailHeroMeta">--</div>
+        </div>
+        <button class="hero-play" id="detailPlayBtn" onclick="togglePlay()">▶</button>
+      </div>
+    </div>
+    <div class="detail-section-title">播报文稿</div>
+    <div class="transcript-card" id="transcript">加载中...</div>
   </div>
 </div>
 
-<div class="content" id="content"></div>
-
+<!-- ===== GLOBAL NOW PLAYING BAR ===== -->
 <div class="now-playing-bar" id="nowPlayingBar">
-  <div class="np-progress"><div class="np-progress-bar" id="npProgressBar"></div></div>
+  <div class="np-progress" id="npProgressTrack" onclick="seekTo(event)">
+    <div class="np-progress-bar" id="npProgressBar"></div>
+  </div>
   <div class="np-cover" id="npCover">🎧</div>
   <div class="np-info">
     <div class="np-title" id="npTitle">--</div>
@@ -422,12 +586,16 @@ body {
 </div>
 
 <script>
+// ===== Global State =====
 let manifest = null;
 let currentTab = 'morning';
 let currentAudio = null;
 let currentItemId = null;
 let isPaused = false;
+let currentView = 'list'; // 'list' or 'detail'
+let detailItemId = null;
 
+// ===== Data Loading =====
 async function loadData() {
   try {
     const resp = await fetch('manifest.json?t=' + Date.now());
@@ -447,6 +615,7 @@ async function loadData() {
   }
 }
 
+// ===== Tab Switching =====
 function switchTab(tab, el) {
   currentTab = tab;
   document.querySelectorAll('.segment').forEach(s => s.classList.remove('active'));
@@ -456,6 +625,7 @@ function switchTab(tab, el) {
   renderContent();
 }
 
+// ===== Render Card List =====
 function renderContent() {
   if (!manifest) return;
   var section = manifest.sections[currentTab];
@@ -476,36 +646,164 @@ function renderContent() {
   items.forEach(function(card, i) {
     var cardHasAudio = card.audio && card.audio.length > 0;
     var tagsHtml = (card.tags || []).map(function(t) { return '<span class="tag ' + t.cls + '">' + t.text + '</span>'; }).join('');
-    html += '<a class="card fade-in" href="detail.html?id=' + encodeURIComponent(card.id) + '" style="animation-delay:' + i * 0.05 + 's">' +
+    var isPlaying = (currentItemId === card.id && !isPaused);
+    var playIcon = isPlaying ? '❚❚' : '▶';
+    var playClass = isPlaying ? 'card-play playing' : 'card-play';
+    html += '<div class="card fade-in" style="animation-delay:' + i * 0.05 + 's" onclick="showDetail(\'' + card.id + '\')">' +
       '<div class="card-cover ' + card.icon + '">' + card.emoji + '</div>' +
       '<div class="card-body">' +
       (tagsHtml ? '<div class="card-tags">' + tagsHtml + '</div>' : '') +
       '<div class="card-title">' + card.title + '</div>' +
       '<div class="card-meta">' + (card.meta || '') + '</div></div>' +
-      '<button class="card-play" id="playBtn-' + card.id + '" ' +
-      (cardHasAudio ? 'onclick="event.preventDefault(); playItem(\'' + card.id + '\')"' : 'disabled onclick="event.preventDefault()"') + '>' +
-      (cardHasAudio ? '▶' : '—') + '</button></a>';
+      '<button class="' + playClass + '" id="playBtn-' + card.id + '" ' +
+      (cardHasAudio ? 'onclick="event.stopPropagation(); playItem(\'' + card.id + '\')"' : 'disabled onclick="event.stopPropagation()"') + '>' +
+      playIcon + '</button></div>';
   });
 
   html += '</div>';
   container.innerHTML = html;
 }
 
-function formatTime(sec) {
-  if (!isFinite(sec) || sec < 0) return '0:00';
-  var m = Math.floor(sec / 60);
-  var s = Math.floor(sec % 60);
-  return m + ':' + String(s).padStart(2, '0');
+// ===== View Switching (SPA, no page reload) =====
+function showList() {
+  currentView = 'list';
+  document.getElementById('listView').style.display = 'block';
+  document.getElementById('detailView').classList.remove('show');
+  window.scrollTo(0, 0);
 }
 
-function stopAll() {
-  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
-  document.querySelectorAll('.card-play').forEach(function(b) { b.innerHTML = '▶'; b.classList.remove('playing'); });
-  document.getElementById('nowPlayingBar').classList.remove('show');
-  currentItemId = null;
-  isPaused = false;
+function showDetail(id) {
+  var item = findItem(id);
+  if (!item) return;
+
+  currentView = 'detail';
+  detailItemId = id;
+
+  document.getElementById('listView').style.display = 'none';
+  document.getElementById('detailView').classList.add('show');
+  window.scrollTo(0, 0);
+
+  document.getElementById('detailTitle').textContent = item.title;
+  document.getElementById('detailMeta').textContent = item.meta || '';
+  document.getElementById('detailCover').textContent = item.emoji || '🎧';
+  document.getElementById('detailCover').className = 'hero-cover ' + (item.icon || '');
+  document.getElementById('detailHeroTitle').textContent = item.title;
+  document.getElementById('detailHeroMeta').textContent = item.meta || '';
+
+  // Update detail play button
+  var detailBtn = document.getElementById('detailPlayBtn');
+  if (currentItemId === id && !isPaused) {
+    detailBtn.innerHTML = '❚❚';
+    detailBtn.classList.add('playing');
+  } else {
+    detailBtn.innerHTML = '▶';
+    detailBtn.classList.remove('playing');
+  }
+
+  // Render transcript
+  var transcript = item.transcript || item.summary || '暂无文稿';
+  document.getElementById('transcript').innerHTML = renderTranscript(transcript);
 }
 
+// ===== Transcript Rendering (numbered list format) =====
+function renderTranscript(text) {
+  if (!text) return '<p>暂无文稿</p>';
+
+  // Split into lines
+  var lines = text.split('\n');
+  var html = '';
+  var inOl = false;  // ordered list
+  var inUl = false;  // unordered list
+  var currentP = [];
+
+  function flushP() {
+    if (currentP.length > 0) {
+      var ptext = currentP.join(' ').trim();
+      if (ptext) {
+        html += '<p>' + escapeHtml(ptext) + '</p>';
+      }
+      currentP = [];
+    }
+  }
+  function flushLists() {
+    flushP();
+    if (inOl) { html += '</ol>'; inOl = false; }
+    if (inUl) { html += '</ul>'; inUl = false; }
+  }
+
+  for (var i = 0; i < lines.length; i++) {
+    var line = lines[i].trim();
+    if (!line) {
+      flushLists();
+      continue;
+    }
+
+    // Remove markdown artifacts
+    line = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    line = line.replace(/`(.*?)`/g, '$1');
+    line = line.replace(/\[(.*?)\]\(.*?\)/g, '$1');
+
+    // Detect headers: # or ## or ### or lines ending with : (short)
+    var headerMatch = line.match(/^#{1,3}\s+(.+)/);
+    if (headerMatch) {
+      flushLists();
+      html += '<h3>' + escapeHtml(headerMatch[1]) + '</h3>';
+      continue;
+    }
+
+    // Detect numbered items: "1. xxx" "2. xxx" "① xxx" "一、 xxx"
+    var numMatch = line.match(/^(\d+)[.、)]\s*(.+)/);
+    var circleMatch = line.match(/^[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮]\s*(.+)/);
+    var chineseNumMatch = line.match(/^[一二三四五六七八九十]+[、.]\s*(.+)/);
+
+    if (numMatch || circleMatch || chineseNumMatch) {
+      flushP();
+      if (inUl) { html += '</ul>'; inUl = false; }
+      if (!inOl) { html += '<ol>'; inOl = true; }
+      var content = numMatch ? numMatch[2] : (circleMatch ? circleMatch[1] : chineseNumMatch[1]);
+      html += '<li>' + content + '</li>';
+      continue;
+    }
+
+    // Detect bullet points: "- xxx" "* xxx" "• xxx"
+    var bulletMatch = line.match(/^[-*•·]\s+(.+)/);
+    if (bulletMatch) {
+      flushP();
+      if (inOl) { html += '</ol>'; inOl = false; }
+      if (!inUl) { html += '<ul>'; inUl = true; }
+      html += '<li>' + bulletMatch[1] + '</li>';
+      continue;
+    }
+
+    // Detect table rows: "| a | b |" → skip
+    if (line.startsWith('|') && line.endsWith('|')) {
+      continue;
+    }
+    // Skip separator rows: "---"
+    if (/^-{3,}$/.test(line)) {
+      flushLists();
+      continue;
+    }
+    // Skip ">" blockquotes
+    if (line.startsWith('>')) {
+      line = line.replace(/^>\s*/, '');
+    }
+
+    flushLists();
+    currentP.push(line);
+  }
+
+  flushLists();
+  return html;
+}
+
+function escapeHtml(text) {
+  var div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// ===== Find Item =====
 function findItem(id) {
   for (var secKey in manifest.sections) {
     var sec = manifest.sections[secKey];
@@ -516,65 +814,140 @@ function findItem(id) {
   return null;
 }
 
+// ===== Audio Playback (Global, persists across views) =====
+function formatTime(sec) {
+  if (!isFinite(sec) || sec < 0) return '0:00';
+  var m = Math.floor(sec / 60);
+  var s = Math.floor(sec % 60);
+  return m + ':' + String(s).padStart(2, '0');
+}
+
 function playItem(id) {
   var item = findItem(id);
   if (!item || !item.audio) return;
 
+  // If same item, toggle pause/play
   if (currentItemId === id) {
-    if (isPaused) { currentAudio.play(); isPaused = false; }
-    else { currentAudio.pause(); isPaused = true; }
-    updatePlayButton(id, isPaused);
+    if (isPaused) {
+      currentAudio.play();
+      isPaused = false;
+    } else {
+      currentAudio.pause();
+      isPaused = true;
+    }
+    updateAllPlayButtons();
     return;
   }
 
-  stopAll();
+  // Stop previous
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio = null;
+  }
+
   currentItemId = id;
+  isPaused = false;
 
-  var btn = document.getElementById('playBtn-' + id);
-  if (btn) { btn.innerHTML = '❚❚'; btn.classList.add('playing'); }
-
-  var bar = document.getElementById('nowPlayingBar');
-  bar.classList.add('show');
-  document.getElementById('npTitle').textContent = item.title;
-  document.getElementById('npSub').textContent = item.meta || '';
-  document.getElementById('npCover').textContent = item.emoji;
-  document.getElementById('npPlayBtn').innerHTML = '❚❚';
-
+  // Create new audio
   currentAudio = new Audio(item.audio);
+
   currentAudio.addEventListener('loadedmetadata', function() {
-    // duration loaded
+    updateNowPlayingBar(item);
   });
   currentAudio.addEventListener('timeupdate', function() {
     if (currentAudio.duration) {
       var pct = (currentAudio.currentTime / currentAudio.duration) * 100;
       document.getElementById('npProgressBar').style.width = pct + '%';
+      var timeStr = formatTime(currentAudio.currentTime) + ' / ' + formatTime(currentAudio.duration);
+      document.getElementById('npSub').textContent = timeStr;
     }
   });
-  currentAudio.addEventListener('ended', function() { stopAll(); });
+  currentAudio.addEventListener('ended', function() {
+    if (currentAudio) currentAudio.currentTime = 0;
+    isPaused = true;
+    updateAllPlayButtons();
+    document.getElementById('npProgressBar').style.width = '0%';
+    document.getElementById('npPlayBtn').innerHTML = '▶';
+  });
   currentAudio.addEventListener('error', function() {
     document.getElementById('npSub').textContent = '音频加载失败';
   });
+
+  // Show now playing bar
+  updateNowPlayingBar(item);
+
   currentAudio.play().catch(function(e) {
     console.error('Audio play failed:', e);
-    document.getElementById('npSub').textContent = '播放失败';
+    document.getElementById('npSub').textContent = '点击播放';
   });
+
+  updateAllPlayButtons();
 }
 
-function updatePlayButton(id, paused) {
-  var btn = document.getElementById('playBtn-' + id);
-  var npBtn = document.getElementById('npPlayBtn');
-  var icon = paused ? '▶' : '❚❚';
-  if (btn) btn.innerHTML = icon;
-  if (npBtn) npBtn.innerHTML = icon;
+function updateNowPlayingBar(item) {
+  var bar = document.getElementById('nowPlayingBar');
+  bar.classList.add('show');
+  document.getElementById('npTitle').textContent = item.title;
+  document.getElementById('npCover').textContent = item.emoji || '🎧';
+  document.getElementById('npPlayBtn').innerHTML = isPaused ? '▶' : '❚❚';
+
+  // Show duration if available
+  if (currentAudio && currentAudio.duration) {
+    document.getElementById('npSub').textContent = '0:00 / ' + formatTime(currentAudio.duration);
+  } else {
+    document.getElementById('npSub').textContent = item.meta || '';
+  }
+}
+
+function updateAllPlayButtons() {
+  var icon = isPaused ? '▶' : '❚❚';
+
+  // Update card play buttons (in list view)
+  document.querySelectorAll('.card-play').forEach(function(b) {
+    var btnId = b.id.replace('playBtn-', '');
+    if (btnId === currentItemId) {
+      b.innerHTML = icon;
+      if (isPaused) b.classList.remove('playing');
+      else b.classList.add('playing');
+    } else {
+      b.innerHTML = '▶';
+      b.classList.remove('playing');
+    }
+  });
+
+  // Update detail play button
+  var detailBtn = document.getElementById('detailPlayBtn');
+  if (detailBtn && detailItemId === currentItemId) {
+    detailBtn.innerHTML = icon;
+    if (isPaused) detailBtn.classList.remove('playing');
+    else detailBtn.classList.add('playing');
+  }
+
+  // Update now playing bar button
+  document.getElementById('npPlayBtn').innerHTML = icon;
 }
 
 function togglePlay() {
-  if (currentItemId === null) return;
-  if (isPaused) { currentAudio.play(); isPaused = false; }
-  else { currentAudio.pause(); isPaused = true; }
-  updatePlayButton(currentItemId, isPaused);
+  if (!currentAudio || !currentItemId) return;
+  if (isPaused) {
+    currentAudio.play();
+    isPaused = false;
+  } else {
+    currentAudio.pause();
+    isPaused = true;
+  }
+  updateAllPlayButtons();
 }
 
+function seekTo(event) {
+  if (!currentAudio || !currentAudio.duration) return;
+  var rect = document.getElementById('npProgressTrack').getBoundingClientRect();
+  var pct = (event.clientX - rect.left) / rect.width;
+  pct = Math.max(0, Math.min(1, pct));
+  currentAudio.currentTime = pct * currentAudio.duration;
+}
+
+// ===== Init =====
 loadData();
 </script>
 
