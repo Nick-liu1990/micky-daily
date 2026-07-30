@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#F2F2F7">
-<title>Micky 每日简报 · 2026-07-28</title>
+<title>Micky 每日简报</title>
 <style>
 :root {
   --bg: #F2F2F7;
@@ -167,111 +167,13 @@ body {
   font-weight: 500;
 }
 
-/* Hero Card */
-.hero-card {
-  background: var(--card);
-  border-radius: var(--radius-xl);
-  padding: 18px;
-  margin-bottom: 16px;
-  box-shadow: var(--shadow-sm);
-  border: 0.5px solid var(--separator);
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.2s ease;
-}
-.hero-card:active {
-  transform: scale(0.985);
-  box-shadow: var(--shadow-sm);
-}
-.hero-main {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-.hero-cover {
-  width: 88px;
-  height: 88px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 36px;
-  flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
-}
-.hero-cover.app { background: linear-gradient(135deg, #FFF4E0 0%, #FFE5C1 100%); }
-.hero-cover.ceo { background: linear-gradient(135deg, #EAF2FF 0%, #D4E5FF 100%); }
-.hero-cover.ai { background: linear-gradient(135deg, #F5E8FC 0%, #ECD4FA 100%); }
-.hero-cover.quant { background: linear-gradient(135deg, #E8F7FE 0%, #D0EFFC 100%); }
-.hero-info { flex: 1; min-width: 0; }
-.hero-title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  letter-spacing: -0.2px;
-}
-.hero-tags { margin-bottom: 8px; }
-.tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 5px;
-  margin-right: 5px;
-}
-.tag-hot { background: #FFECEC; color: var(--red); }
-.tag-new { background: var(--blue-soft); color: var(--blue); }
-.tag-trending { background: var(--purple-soft); color: var(--purple); }
-.tag-money { background: #E4FAEC; color: #1A8C3E; }
-.tag-time { background: rgba(0,0,0,0.05); color: var(--text-secondary); }
-.hero-meta {
-  font-size: 13px;
-  color: var(--text-secondary);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.hero-meta-dot {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: var(--text-tertiary);
-}
-.hero-play {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: none;
-  background: var(--blue);
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0,122,255,0.28);
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-.hero-play:active { transform: scale(0.9); }
-.hero-play.playing { background: var(--red); box-shadow: 0 4px 12px rgba(255,59,48,0.28); }
-.hero-summary {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.55;
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 0.5px solid var(--separator);
-}
-.hero-summary strong { color: var(--text); font-weight: 600; }
-
-/* Compact Card List */
+/* Uniform Cards */
 .card-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.compact-card {
+.card {
   background: var(--card);
   border-radius: var(--radius-lg);
   padding: 14px;
@@ -282,90 +184,84 @@ body {
   border: 0.5px solid var(--separator);
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
 }
-.compact-card:active {
+.card:active {
   transform: scale(0.985);
   box-shadow: var(--shadow-sm);
 }
-.compact-cover {
+.card-cover {
   width: 56px;
   height: 56px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 26px;
   flex-shrink: 0;
 }
-.compact-cover.app { background: var(--orange-soft); }
-.compact-cover.ceo { background: var(--blue-soft); }
-.compact-cover.ai { background: var(--purple-soft); }
-.compact-cover.quant { background: var(--teal-soft); }
-.compact-body { flex: 1; min-width: 0; }
-.compact-title {
+.card-cover.app { background: var(--orange-soft); }
+.card-cover.ceo { background: var(--blue-soft); }
+.card-cover.ai { background: var(--purple-soft); }
+.card-cover.quant { background: var(--teal-soft); }
+.card-body { flex: 1; min-width: 0; }
+.card-title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 4px;
   letter-spacing: -0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.compact-meta {
+.card-tags {
+  margin-bottom: 5px;
+}
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 7px;
+  border-radius: 5px;
+  margin-right: 4px;
+}
+.tag-hot { background: #FFECEC; color: var(--red); }
+.tag-new { background: var(--blue-soft); color: var(--blue); }
+.tag-trending { background: var(--purple-soft); color: var(--purple); }
+.tag-money { background: #E4FAEC; color: #1A8C3E; }
+.tag-time { background: rgba(0,0,0,0.05); color: var(--text-secondary); }
+.card-meta {
   font-size: 12px;
   color: var(--text-secondary);
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.compact-play {
-  width: 36px;
-  height: 36px;
+.card-play {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: none;
-  background: var(--blue-soft);
-  color: var(--blue);
-  font-size: 14px;
+  background: var(--blue);
+  color: white;
+  font-size: 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(0,122,255,0.24);
   transition: transform 0.15s ease, background 0.15s ease;
 }
-.compact-play:active { transform: scale(0.88); }
-.compact-play.playing { background: #FFEEED; color: var(--red); }
-
-/* Progress & Player Inline */
-.player-inline {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 0.5px solid var(--separator);
-  display: none;
-  align-items: center;
-  gap: 10px;
-}
-.player-inline.active { display: flex; }
-.time {
-  font-size: 11px;
-  color: var(--text-tertiary);
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-  min-width: 36px;
-  text-align: center;
-}
-.progress-track {
-  flex: 1;
-  height: 5px;
+.card-play:active { transform: scale(0.88); }
+.card-play.playing { background: var(--red); box-shadow: 0 3px 10px rgba(255,59,48,0.24); }
+.card-play:disabled {
   background: rgba(0,0,0,0.08);
-  border-radius: 3px;
-  overflow: hidden;
-  position: relative;
-}
-.progress-fill {
-  height: 100%;
-  background: var(--blue);
-  border-radius: 3px;
-  width: 0%;
-  transition: width 0.1s linear;
+  color: var(--text-tertiary);
+  box-shadow: none;
+  cursor: not-allowed;
 }
 
 /* Empty State */
@@ -460,7 +356,6 @@ body {
   height: 100%;
   background: var(--blue);
   width: 0%;
-  transition: width 0.1s linear;
 }
 
 .fade-in { animation: fadeIn 0.35s cubic-bezier(0.25, 0.1, 0.25, 1); }
@@ -496,7 +391,7 @@ body {
   <div class="header-top">
     <div>
       <div class="header-title">Micky 每日简报</div>
-      <div class="header-date">2026年7月28日 · 周二</div>
+      <div class="header-date" id="headerDate">--</div>
     </div>
     <div class="header-badge"><span class="pulse-dot"></span> 今日已更新</div>
   </div>
@@ -530,7 +425,7 @@ body {
 let manifest = null;
 let currentTab = 'morning';
 let currentAudio = null;
-let currentCardId = null;
+let currentItemId = null;
 let isPaused = false;
 
 async function loadData() {
@@ -540,7 +435,7 @@ async function loadData() {
     if (manifest.date) {
       const d = new Date(manifest.date);
       const weekdays = ['周日','周一','周二','周三','周四','周五','周六'];
-      document.querySelector('.header-date').textContent =
+      document.getElementById('headerDate').textContent =
         d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日 · ' + weekdays[d.getDay()];
     }
     renderContent();
@@ -567,74 +462,37 @@ function renderContent() {
   if (!section) return;
   var container = document.getElementById('content');
   var items = section.items || [];
-  var hero = items[0];
-  var list = items.slice(1);
 
-  if (!hero) {
+  if (items.length === 0) {
     container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📭</div><div class="empty-state-text">暂无播报</div></div>';
     return;
   }
 
-  var hasAudio = hero.audio && hero.audio.length > 0;
-  var tagsHtml = (hero.tags || []).map(function(t) { return '<span class="tag ' + t.cls + '">' + t.text + '</span>'; }).join('');
-
   var html = '<div class="section-header fade-in">' +
     '<div class="section-title">' + section.label + '</div>' +
     '<div class="section-sub">' + (section.sub || '') + '</div></div>' +
-    '<div class="hero-card fade-in"' + (hasAudio ? ' onclick="playItem(0)"' : '') + '>' +
-    '<div class="hero-main">' +
-    '<div class="hero-cover ' + hero.icon + '">' + hero.emoji + '</div>' +
-    '<div class="hero-info">' +
-    '<div class="hero-title">' + hero.title + '</div>' +
-    '<div class="hero-tags">' + tagsHtml + '</div>' +
-    '<div class="hero-meta"><span>' + (hero.meta || '') + '</span></div>' +
-    '</div>' +
-    (hasAudio
-      ? '<button class="hero-play" id="playBtn0" onclick="event.stopPropagation(); playItem(0)">▶</button>'
-      : '<span class="tag tag-time" style="font-size:12px;padding:6px 12px;">待更新</span>') +
-    '</div>';
+    '<div class="card-list">';
 
-  if (hasAudio) {
-    html += '<div class="player-inline" id="player0">' +
-      '<span class="time" id="cur0">0:00</span>' +
-      '<div class="progress-track"><div class="progress-fill" id="progress0"></div></div>' +
-      '<span class="time" id="dur0">--:--</span></div>';
-  }
-  if (hero.summary) {
-    html += '<div class="hero-summary">' + hero.summary + '</div>';
-  }
+  items.forEach(function(card, i) {
+    var cardHasAudio = card.audio && card.audio.length > 0;
+    var tagsHtml = (card.tags || []).map(function(t) { return '<span class="tag ' + t.cls + '">' + t.text + '</span>'; }).join('');
+    html += '<a class="card fade-in" href="detail.html?id=' + encodeURIComponent(card.id) + '" style="animation-delay:' + i * 0.05 + 's">' +
+      '<div class="card-cover ' + card.icon + '">' + card.emoji + '</div>' +
+      '<div class="card-body">' +
+      (tagsHtml ? '<div class="card-tags">' + tagsHtml + '</div>' : '') +
+      '<div class="card-title">' + card.title + '</div>' +
+      '<div class="card-meta">' + (card.meta || '') + '</div></div>' +
+      '<button class="card-play" id="playBtn-' + card.id + '" ' +
+      (cardHasAudio ? 'onclick="event.preventDefault(); playItem(\'' + card.id + '\')"' : 'disabled onclick="event.preventDefault()"') + '>' +
+      (cardHasAudio ? '▶' : '—') + '</button></a>';
+  });
+
   html += '</div>';
-
-  if (list.length > 0) {
-    html += '<div class="card-list">';
-    list.forEach(function(card, i) {
-      var idx = i + 1;
-      var cardHasAudio = card.audio && card.audio.length > 0;
-      html += '<div class="compact-card fade-in" style="animation-delay:' + idx * 0.05 + 's"' +
-        (cardHasAudio ? ' onclick="playItem(' + idx + ')"' : '') + '>' +
-        '<div class="compact-cover ' + card.icon + '">' + card.emoji + '</div>' +
-        '<div class="compact-body">' +
-        '<div class="compact-title">' + card.title + '</div>' +
-        '<div class="compact-meta">' + (card.meta || '') + '</div></div>' +
-        (cardHasAudio
-          ? '<button class="compact-play" id="playBtn' + idx + '" onclick="event.stopPropagation(); playItem(' + idx + ')">▶</button>'
-          : '<span class="tag tag-time" style="font-size:11px;">待更新</span>') +
-        '</div>';
-      if (cardHasAudio) {
-        html += '<div class="hero-card fade-in player-inline" id="player' + idx + '" style="margin-top:-6px;margin-bottom:10px;display:none">' +
-          '<div style="display:flex;align-items:center;gap:10px;width:100%">' +
-          '<span class="time" id="cur' + idx + '">0:00</span>' +
-          '<div class="progress-track"><div class="progress-fill" id="progress' + idx + '"></div></div>' +
-          '<span class="time" id="dur' + idx + '">--:--</span></div></div>';
-      }
-    });
-    html += '</div>';
-  }
-
   container.innerHTML = html;
 }
 
 function formatTime(sec) {
+  if (!isFinite(sec) || sec < 0) return '0:00';
   var m = Math.floor(sec / 60);
   var s = Math.floor(sec % 60);
   return m + ':' + String(s).padStart(2, '0');
@@ -642,32 +500,38 @@ function formatTime(sec) {
 
 function stopAll() {
   if (currentAudio) { currentAudio.pause(); currentAudio = null; }
-  document.querySelectorAll('.hero-play, .compact-play').forEach(function(b) { b.innerHTML = '▶'; b.classList.remove('playing'); });
-  document.querySelectorAll('.player-inline').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.card-play').forEach(function(b) { b.innerHTML = '▶'; b.classList.remove('playing'); });
   document.getElementById('nowPlayingBar').classList.remove('show');
-  currentCardId = null;
+  currentItemId = null;
   isPaused = false;
 }
 
-function playItem(index) {
-  var section = manifest.sections[currentTab];
-  var item = section.items[index];
+function findItem(id) {
+  for (var secKey in manifest.sections) {
+    var sec = manifest.sections[secKey];
+    for (var i = 0; i < sec.items.length; i++) {
+      if (sec.items[i].id === id) return sec.items[i];
+    }
+  }
+  return null;
+}
+
+function playItem(id) {
+  var item = findItem(id);
   if (!item || !item.audio) return;
 
-  if (currentCardId === index) {
+  if (currentItemId === id) {
     if (isPaused) { currentAudio.play(); isPaused = false; }
     else { currentAudio.pause(); isPaused = true; }
-    updatePlayButton(index, isPaused);
+    updatePlayButton(id, isPaused);
     return;
   }
 
   stopAll();
-  currentCardId = index;
+  currentItemId = id;
 
-  var btn = document.getElementById('playBtn' + index);
+  var btn = document.getElementById('playBtn-' + id);
   if (btn) { btn.innerHTML = '❚❚'; btn.classList.add('playing'); }
-  var player = document.getElementById('player' + index);
-  if (player) player.classList.add('active');
 
   var bar = document.getElementById('nowPlayingBar');
   bar.classList.add('show');
@@ -678,29 +542,26 @@ function playItem(index) {
 
   currentAudio = new Audio(item.audio);
   currentAudio.addEventListener('loadedmetadata', function() {
-    var dur = document.getElementById('dur' + index);
-    if (dur) dur.textContent = formatTime(currentAudio.duration);
+    // duration loaded
   });
   currentAudio.addEventListener('timeupdate', function() {
     if (currentAudio.duration) {
       var pct = (currentAudio.currentTime / currentAudio.duration) * 100;
-      var prog = document.getElementById('progress' + index);
-      if (prog) prog.style.width = pct + '%';
-      var cur = document.getElementById('cur' + index);
-      if (cur) cur.textContent = formatTime(currentAudio.currentTime);
       document.getElementById('npProgressBar').style.width = pct + '%';
     }
   });
   currentAudio.addEventListener('ended', function() { stopAll(); });
+  currentAudio.addEventListener('error', function() {
+    document.getElementById('npSub').textContent = '音频加载失败';
+  });
   currentAudio.play().catch(function(e) {
     console.error('Audio play failed:', e);
-    var cur = document.getElementById('cur' + index);
-    if (cur) cur.textContent = '加载失败';
+    document.getElementById('npSub').textContent = '播放失败';
   });
 }
 
-function updatePlayButton(index, paused) {
-  var btn = document.getElementById('playBtn' + index);
+function updatePlayButton(id, paused) {
+  var btn = document.getElementById('playBtn-' + id);
   var npBtn = document.getElementById('npPlayBtn');
   var icon = paused ? '▶' : '❚❚';
   if (btn) btn.innerHTML = icon;
@@ -708,10 +569,10 @@ function updatePlayButton(index, paused) {
 }
 
 function togglePlay() {
-  if (currentCardId === null) return;
+  if (currentItemId === null) return;
   if (isPaused) { currentAudio.play(); isPaused = false; }
   else { currentAudio.pause(); isPaused = true; }
-  updatePlayButton(currentCardId, isPaused);
+  updatePlayButton(currentItemId, isPaused);
 }
 
 loadData();

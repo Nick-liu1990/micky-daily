@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#F2F2F7">
+<title>文稿详情 · Micky 每日简报</title>
+<style>
+:root {
+  --bg: #F2F2F7;
+  --card: #FFFFFF;
+  --text: #1C1C1E;
+  --text-secondary: #6C6C70;
+  --text-tertiary: #9A9AA2;
+  --separator: rgba(0,0,0,0.08);
+  --blue: #007AFF;
+  --blue-soft: #EAF2FF;
+  --green: #34C759;
+  --orange: #FF9F0A;
+  --orange-soft: #FFF4E0;
+  --purple: #AF52DE;
+  --purple-soft: #F5E8FC;
+  --teal: #5AC8FA;
+  --teal-soft: #E8F7FE;
+  --radius-xl: 22px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'PingFang SC', 'Helvetica Neue', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: calc(140px + env(safe-area-inset-bottom));
+  -webkit-font-smoothing: antialiased;
+}
+
+.header {
+  padding: 16px 16px 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(242,242,247,0.86);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 0.5px solid rgba(0,0,0,0.05);
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--blue);
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.header-title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+.header-meta {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.content {
+  padding: 16px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.hero-card {
+  background: var(--card);
+  border-radius: var(--radius-xl);
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 0.5px solid var(--separator);
+}
+.hero-main {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.hero-cover {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+.hero-cover.app { background: linear-gradient(135deg, #FFF4E0 0%, #FFE5C1 100%); }
+.hero-cover.ceo { background: linear-gradient(135deg, #EAF2FF 0%, #D4E5FF 100%); }
+.hero-cover.ai { background: linear-gradient(135deg, #F5E8FC 0%, #ECD4FA 100%); }
+.hero-cover.quant { background: linear-gradient(135deg, #E8F7FE 0%, #D0EFFC 100%); }
+.hero-info { flex: 1; min-width: 0; }
+.hero-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+}
+.hero-meta {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.hero-play {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blue);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,122,255,0.28);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.hero-play:active { transform: scale(0.9); }
+.hero-play.playing { background: var(--red); box-shadow: 0 4px 12px rgba(255,59,48,0.28); }
+
+.player-inline {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 0.5px solid var(--separator);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.time {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  min-width: 40px;
+  text-align: center;
+}
+.progress-track {
+  flex: 1;
+  height: 5px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--blue);
+  border-radius: 3px;
+  width: 0%;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 24px 0 12px;
+  padding: 0 4px;
+  letter-spacing: -0.2px;
+}
+.transcript-card {
+  background: var(--card);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 0.5px solid var(--separator);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+.transcript-card p {
+  margin-bottom: 12px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--text-secondary);
+}
+
+.now-playing-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border-top: 0.5px solid rgba(0,0,0,0.08);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  display: none;
+  align-items: center;
+  gap: 14px;
+  z-index: 200;
+}
+.now-playing-bar.show { display: flex; }
+.np-cover {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  background: var(--blue-soft);
+}
+.np-info { flex: 1; min-width: 0; }
+.np-title {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.1px;
+}
+.np-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.np-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blue);
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.12s ease;
+}
+.np-btn:active { transform: scale(0.9); }
+.np-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0,0,0,0.06);
+}
+.np-progress-bar {
+  height: 100%;
+  background: var(--blue);
+  width: 0%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --card: #1C1C1E;
+    --text: #FFFFFF;
+    --text-secondary: #98989F;
+    --text-tertiary: #66666C;
+    --separator: rgba(255,255,255,0.10);
+    --blue-soft: rgba(10,132,255,0.18);
+    --orange-soft: rgba(255,159,10,0.18);
+    --purple-soft: rgba(175,82,222,0.18);
+    --teal-soft: rgba(90,200,250,0.18);
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.24);
+  }
+  body { background: var(--bg); }
+  .header { background: rgba(0,0,0,0.78); border-bottom-color: rgba(255,255,255,0.08); }
+  .now-playing-bar { background: rgba(28,28,30,0.88); border-top-color: rgba(255,255,255,0.10); }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html" class="back-btn">← 返回</a>
+  <div class="header-title" id="title">--</div>
+  <div class="header-meta" id="meta">--</div>
+</div>
+
+<div class="content">
+  <div class="hero-card">
+    <div class="hero-main">
+      <div class="hero-cover" id="cover">🎧</div>
+      <div class="hero-info">
+        <div class="hero-title" id="heroTitle">--</div>
+        <div class="hero-meta" id="heroMeta">--</div>
+      </div>
+      <button class="hero-play" id="playBtn" onclick="togglePlay()">▶</button>
+    </div>
+    <div class="player-inline">
+      <span class="time" id="cur">0:00</span>
+      <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+      <span class="time" id="dur">--:--</span>
+    </div>
+  </div>
+
+  <div class="section-title">播报文稿</div>
+  <div class="transcript-card" id="transcript">加载中...</div>
+</div>
+
+<div class="now-playing-bar" id="nowPlayingBar">
+  <div class="np-progress"><div class="np-progress-bar" id="npProgressBar"></div></div>
+  <div class="np-cover" id="npCover">🎧</div>
+  <div class="np-info">
+    <div class="np-title" id="npTitle">--</div>
+    <div class="np-sub" id="npSub">--</div>
+  </div>
+  <button class="np-btn" id="npPlayBtn" onclick="togglePlay()">❚❚</button>
+</div>
+
+<script>
+let manifest = null;
+let currentAudio = null;
+let isPaused = false;
+let item = null;
+
+async function loadData() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (!id) {
+      document.getElementById('transcript').textContent = '缺少参数 id';
+      return;
+    }
+
+    const resp = await fetch('manifest.json?t=' + Date.now());
+    manifest = await resp.json();
+
+    // Find item across all sections
+    for (const secKey in manifest.sections) {
+      const sec = manifest.sections[secKey];
+      item = sec.items.find(it => it.id === id);
+      if (item) break;
+    }
+
+    if (!item) {
+      document.getElementById('transcript').textContent = '未找到该播报';
+      return;
+    }
+
+    document.getElementById('title').textContent = item.title;
+    document.getElementById('meta').textContent = item.meta || '';
+    document.getElementById('cover').textContent = item.emoji || '🎧';
+    document.getElementById('cover').className = 'hero-cover ' + (item.icon || '');
+    document.getElementById('heroTitle').textContent = item.title;
+    document.getElementById('heroMeta').textContent = item.meta || '';
+
+    const transcript = item.transcript || item.summary || '暂无文稿';
+    // Convert newlines to paragraphs
+    document.getElementById('transcript').innerHTML = transcript
+      .split('\n\n')
+      .map(p => p.trim() ? '<p>' + escapeHtml(p).replace(/\n/g, '<br>') + '</p>' : '')
+      .join('');
+
+  } catch(e) {
+    document.getElementById('transcript').textContent = '加载失败，请刷新重试';
+  }
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function formatTime(sec) {
+  if (!isFinite(sec) || sec < 0) return '0:00';
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return m + ':' + String(s).padStart(2, '0');
+}
+
+function togglePlay() {
+  if (!item || !item.audio) return;
+
+  if (currentAudio) {
+    if (isPaused) {
+      currentAudio.play();
+      isPaused = false;
+    } else {
+      currentAudio.pause();
+      isPaused = true;
+    }
+    updateButtons();
+    return;
+  }
+
+  currentAudio = new Audio(item.audio);
+  currentAudio.addEventListener('loadedmetadata', updateDuration);
+  currentAudio.addEventListener('durationchange', updateDuration);
+  currentAudio.addEventListener('timeupdate', updateProgress);
+  currentAudio.addEventListener('ended', () => {
+    isPaused = false;
+    updateButtons();
+    document.getElementById('progress').style.width = '0%';
+    document.getElementById('npProgressBar').style.width = '0%';
+    document.getElementById('cur').textContent = '0:00';
+  });
+  currentAudio.addEventListener('error', () => {
+    document.getElementById('dur').textContent = '加载失败';
+  });
+
+  document.getElementById('nowPlayingBar').classList.add('show');
+  document.getElementById('npTitle').textContent = item.title;
+  document.getElementById('npSub').textContent = item.meta || '';
+  document.getElementById('npCover').textContent = item.emoji || '🎧';
+
+  currentAudio.play().then(() => {
+    isPaused = false;
+    updateButtons();
+  }).catch(e => {
+    console.error('Play failed:', e);
+    document.getElementById('dur').textContent = '播放失败';
+  });
+}
+
+function updateDuration() {
+  if (currentAudio && currentAudio.duration) {
+    document.getElementById('dur').textContent = formatTime(currentAudio.duration);
+  }
+}
+
+function updateProgress() {
+  if (!currentAudio || !currentAudio.duration) return;
+  const pct = (currentAudio.currentTime / currentAudio.duration) * 100;
+  document.getElementById('progress').style.width = pct + '%';
+  document.getElementById('npProgressBar').style.width = pct + '%';
+  document.getElementById('cur').textContent = formatTime(currentAudio.currentTime);
+}
+
+function updateButtons() {
+  const icon = isPaused ? '▶' : '❚❚';
+  document.getElementById('playBtn').innerHTML = icon;
+  document.getElementById('npPlayBtn').innerHTML = icon;
+  if (isPaused) {
+    document.getElementById('playBtn').classList.remove('playing');
+  } else {
+    document.getElementById('playBtn').classList.add('playing');
+  }
+}
+
+loadData();
+</script>
+
+</body>
+</html>
