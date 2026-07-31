@@ -3,9 +3,9 @@
   <channel>
     <title>MICKY每日简报</title>
     <link>https://nick-liu1990.github.io/micky-daily/</link>
-    <language>zh-cn</language>
+    <language>zh-CN</language>
     <description>AI驱动的每日播报，涵盖APP市场商机、CEO简报、AI行业动态和量化交易信号。每天早间和晚间更新，用声音给你一天的信息精华。</description>
-    <lastBuildDate>Thu, 30 Jul 2026 15:29:16 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 12:00:02 +0800</lastBuildDate>
     <itunes:author>Micky</itunes:author>
     <itunes:summary>AI驱动的每日播报，涵盖APP市场商机、CEO简报、AI行业动态和量化交易信号。每天早间和晚间更新，用声音给你一天的信息精华。</itunes:summary>
     <itunes:type>episodic</itunes:type>
@@ -24,7 +24,7 @@
       <description><![CDATA[持仓浮盈浮亏+今日结算+明日候选]]></description>
       <pubDate>Thu, 30 Jul 2026 08:30:00 +0800</pubDate>
       <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/quant_signal.mp3" length="1259123" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/quant_signal.mp3</guid>
+      <guid isPermaLink="false">2026-07-30-quant_signal</guid>
       <itunes:title>2026-07-30 盘前信号扫描</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>00:01:18</itunes:duration>
@@ -76,7 +76,7 @@
  商机： 做一款"隐私优先的健康数据仪表板"APP。不追求成为系统级预装，而是主动聚合Apple Health、Google Fit、Withings、Oura、血糖仪等设备和APP的数据，用清晰的图表展示趋势（血压、血糖、体重、睡眠）。关键差异]]></description>
       <pubDate>Thu, 30 Jul 2026 08:30:00 +0800</pubDate>
       <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/app_research.mp3" length="6459827" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/app_research.mp3</guid>
+      <guid isPermaLink="false">2026-07-30-app_research</guid>
       <itunes:title>2026-07-30 APP调研商机日报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>00:06:43</itunes:duration>
@@ -177,7 +177,7 @@
   核心池亮点  ]]></description>
       <pubDate>Thu, 30 Jul 2026 08:30:00 +0800</pubDate>
       <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/ceo_morning.mp3" length="2610419" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/ceo_morning.mp3</guid>
+      <guid isPermaLink="false">2026-07-30-ceo_morning</guid>
       <itunes:title>2026-07-30 CEO早间简报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>00:02:43</itunes:duration>
@@ -264,7 +264,7 @@
  xAI 发布的 Grok Voice Think F]]></description>
       <pubDate>Thu, 30 Jul 2026 08:30:00 +0800</pubDate>
       <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/ai_daily.mp3" length="2641523" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/ai_daily.mp3</guid>
+      <guid isPermaLink="false">2026-07-30-ai_daily</guid>
       <itunes:title>2026-07-30 AI行业日报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>00:02:44</itunes:duration>
@@ -318,7 +318,7 @@
 ]]></description>
       <pubDate>Wed, 29 Jul 2026 08:30:00 +0800</pubDate>
       <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://nick-liu1990.github.io/micky-daily/audio/2026-07-29/daily_audio.mp3</guid>
+      <guid isPermaLink="false">2026-07-29-quant_review</guid>
       <itunes:title>2026-07-29 盘后复盘</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>00:03:19</itunes:duration>
@@ -340,7 +340,7 @@
       <description><![CDATA[今日8个项目复盘摘要]]></description>
       <pubDate>Wed, 29 Jul 2026 08:30:00 +0800</pubDate>
       <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://nick-liu1990.github.io/micky-daily/audio/2026-07-29/daily_audio.mp3</guid>
+      <guid isPermaLink="false">2026-07-29-ceo_evening</guid>
       <itunes:title>2026-07-29 CEO晚间简报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:duration>00:03:19</itunes:duration>
