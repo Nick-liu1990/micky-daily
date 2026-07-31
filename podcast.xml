@@ -6,7 +6,7 @@
     <link>https://nick-liu1990.github.io/micky-daily/</link>
     <language>zh-CN</language>
     <description>AI驱动的每日播报，涵盖APP市场商机、CEO简报、AI行业动态和量化交易信号。每天早间和晚间更新，用声音给你一天的信息精华。</description>
-    <lastBuildDate>Fri, 31 Jul 2026 12:07:34 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 12:09:04 +0800</lastBuildDate>
     <itunes:author>Micky</itunes:author>
     <itunes:summary>AI驱动的每日播报，涵盖APP市场商机、CEO简报、AI行业动态和量化交易信号。每天早间和晚间更新，用声音给你一天的信息精华。</itunes:summary>
     <itunes:type>episodic</itunes:type>
@@ -14,9 +14,9 @@
       <itunes:category text="Gadgets"/>
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
-    <itunes:image href="https://nick-liu1990.github.io/micky-daily/podcast-cover.jpg"/>
+    <itunes:image href="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/podcast-cover.jpg"/>
     <image>
-      <url>https://nick-liu1990.github.io/micky-daily/podcast-cover.jpg</url>
+      <url>https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/podcast-cover.jpg</url>
       <title>MICKY每日简报</title>
       <link>https://nick-liu1990.github.io/micky-daily/</link>
     </image>
@@ -24,7 +24,7 @@
       <title>2026-07-30 盘前信号扫描</title>
       <description><![CDATA[持仓浮盈浮亏+今日结算+明日候选]]></description>
       <pubDate>Thu, 30 Jul 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/quant_signal.mp3" length="1259123" type="audio/mpeg"/>
+      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-30/quant_signal.mp3" length="1259123" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-30-quant_signal</guid>
       <itunes:title>2026-07-30 盘前信号扫描</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -76,7 +76,7 @@
  Health Connect是Google官方推出的健康数据枢纽，在Android设备上预装且难以卸载。根据Unstar对2026年Google Play低评分大APP的追踪，Health Connect仅获2.8星，核心差评集中在：强制预装占用资源、频繁force-close崩溃、实际功能只是"在不同Google服务之间同步数据"、用户感知不到直接价值。作为一款健康数据中间件，它的问题反而暴露了"健康数据聚合"这个需求本身的真实存在——用户希望有一个稳定、透明、可控的健康数据看板。 
  商机： 做一款"隐私优先的健康数据仪表板"APP。不追求成为系统级预装，而是主动聚合Apple Health、Google Fit、Withings、Oura、血糖仪等设备和APP的数据，用清晰的图表展示趋势（血压、血糖、体重、睡眠）。关键差异]]></description>
       <pubDate>Thu, 30 Jul 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/app_research.mp3" length="6459827" type="audio/mpeg"/>
+      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-30/app_research.mp3" length="6459827" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-30-app_research</guid>
       <itunes:title>2026-07-30 APP调研商机日报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -177,7 +177,7 @@
   signal_ledger.json   []（空）— 连续 9 交易日零 CANDIDATE  
   核心池亮点  ]]></description>
       <pubDate>Thu, 30 Jul 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/ceo_morning.mp3" length="2610419" type="audio/mpeg"/>
+      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-30/ceo_morning.mp3" length="2610419" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-30-ceo_morning</guid>
       <itunes:title>2026-07-30 CEO早间简报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -264,7 +264,7 @@
  xAI Grok Voice 2.0：首音频延迟压至 0.7 秒，定价每分钟 0.08 美元 
  xAI 发布的 Grok Voice Think F]]></description>
       <pubDate>Thu, 30 Jul 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-30/ai_daily.mp3" length="2641523" type="audio/mpeg"/>
+      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-30/ai_daily.mp3" length="2641523" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-30-ai_daily</guid>
       <itunes:title>2026-07-30 AI行业日报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -318,7 +318,7 @@
 以上就是今日量化复盘。明天盘前见。
 ]]></description>
       <pubDate>Wed, 29 Jul 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
+      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-29-quant_review</guid>
       <itunes:title>2026-07-29 盘后复盘</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -340,7 +340,7 @@
       <title>2026-07-29 CEO晚间简报</title>
       <description><![CDATA[今日8个项目复盘摘要]]></description>
       <pubDate>Wed, 29 Jul 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://nick-liu1990.github.io/micky-daily/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
+      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-29-ceo_evening</guid>
       <itunes:title>2026-07-29 CEO晚间简报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
