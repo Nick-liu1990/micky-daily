@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <atom:link href="https://nick-liu1990.github.io/micky-daily/podcast.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/podcast.xml" rel="self" type="application/rss+xml"/>
     <title>MICKY每日简报</title>
     <link>https://nick-liu1990.github.io/micky-daily/</link>
     <language>zh-CN</language>
-    <description>AI驱动的每日播报，涵盖APP市场商机、CEO简报、AI行业动态和量化交易信号。每天早间和晚间更新，用声音给你一天的信息精华。</description>
-    <lastBuildDate>Sat, 01 Aug 2026 07:54:24 +0800</lastBuildDate>
+    <description>AI驱动的每日播报，涵盖APP市场商机、CEO简报、AI行业动态和量化交易信号。</description>
+    <lastBuildDate>Mon, 03 Aug 2026 15:04:41 +0800</lastBuildDate>
     <itunes:author>Micky</itunes:author>
-    <itunes:summary>AI驱动的每日播报，涵盖APP市场商机、CEO简报、AI行业动态和量化交易信号。每天早间和晚间更新，用声音给你一天的信息精华。</itunes:summary>
+    <itunes:summary>AI驱动的每日播报，涵盖APP市场商机、CEO简报、AI行业动态和量化交易信号。</itunes:summary>
     <itunes:type>episodic</itunes:type>
     <itunes:category text="Technology">
-      <itunes:category text="Gadgets"/>
+      <itunes:category text="Tech News"/>
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:image href="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/podcast-cover.jpg"/>
@@ -21,198 +21,120 @@
       <link>https://nick-liu1990.github.io/micky-daily/</link>
     </image>
     <item>
-      <title>2026-08-01 APP调研商机日报</title>
-      <description><![CDATA[早上好，Nicky。这是8月1日的APP调研商机日报语音摘要，共11条商机。
-
-第一条，GasBuddy（音：加斯巴迪）加油导航APP。它在Google Play只有3.0星，Trustpilot（音：恰斯特派勒特）1.3星，82万条评分里大量用户骂它"价格骗局"和"广告骚扰"。据Unstar和Trustpilot 2026年7月数据，GasBuddy原本是14万加油站导航必备APP，但近两年把返现改积分、广告加重、价格也不准。这是美国市场刚需被自家产品拖垮的典型案例。一人公司可以做"反GasBuddy"极简版，只用政府公开数据源，无广告无积分，一次性买断1.99美元就能切入。
-
-第二条，MapQuest（音：麦普奎斯特）老牌导航。Google Play 3.2星，被Google Maps和Waze夹击，但B端物流司机需求被忽视。据Unstar 2026年低分大APP盘点显示，大量用户把MapQuest当货车导航用。机会是做"轻量货车司机导航"，开源OSRM路由引擎+OSM数据，避开限重桥，零地图授权成本，9.99美元月订阅。目标是美国、欧洲的独立司机和小型物流公司。
-
-第三条，AccuWeather（音：艾丘维泽）天气APP。它的Android版只有2.55星，iOS版4.59星，分裂到离谱。据Marlvel AI和Unstar 2026年报告，差评集中在广告堵塞核心功能、Android加载10-20秒。一人公司可以做"反AccuWeather"极简天气APP，名字直接叫Quiet Weather或NoAds Weather，一次性1.99美元去广告，目标美国、英国、加拿大。
-
-第四条，Boldin（音：波丁）退休规划平台。2026年6月18日它公布数据：88,087户家庭、2470亿美元资产已经切向DIY退休规划。它的Plus订阅只要12美元月费，对比传统1% AUM顾问费31,000美元一年，价差215倍。据PR Newswire和Fidelity报道，这证明DIY退休规划是高粘性高LTV品类。机会是针对美国婴儿潮一代做"AI退休规划助手"极简对话版，9.99美元月费，Vibe Coding 2-3周出MVP。
-
-第五条，数字遗嘱和数字遗产。这是全球187亿美元市场，2035年预计637.5亿美元，年复合增长率14.6%，中国增速40.2%最快。据Morgan Reed Insights和FactMR 2026报告，每个逝者留下20-50个数字账号，家人往往完全无法访问。机会是做"个人数字遗产清单"APP，19.99美元一次性买断，加密存储加时间锁，目标美国、英国、日本。
-
-第六条，Polsia（音：波尔西亚）AI代理销售代理。这是本期最高优先级商机。据GreyJournal 2026年6月报道，创始人Ben Broca（音：本·布罗卡）在旧金山一居室公寓用AI Agent堆栈，30天做到100万美元ARR，两个月300万美元ARR，零员工。他给牙科诊所、HVAC暖通公司、律所等"员工难招"行业部署AI Agent，处理预约确认、线索跟进、发票提醒，500到3000美元初始搭建费加200到500美元月管理费。机会是做"AI代理搭建工具"或中文本地生活版，目标中国市场微信生态。
-
-第七条，非英语市场SaaS本地化。据Superframeworks 2026年微SaaS排名，全球75%人口不以英语为母语，但几乎所有微SaaS都只做英语版。需求评分10分、供给2分，空白巨大。核心不只是翻译，是文化适配——墨西哥CFDI税务、印尼Bahasa习惯、阿拉伯RTL界面、本地支付集成Mercado Pago、GCash、M-Pesa。机会是"出海本地化一站式服务"，2000到8000美元项目收费，目标拉美、东南亚、中东。
-
-第八条，小企业Google评价自动化。据MicroGaps 2026年数据，美国3600万小商家有这个需求，但BirdEye（音：伯德艾）349美元月、Podium（音：波迪姆）399美元月太贵。机会是做"只做评价请求一件事"的极简工具，19到29美元月订阅，Twilio（音：推利欧）短信加Google Business Profile API，目标是抢BirdEye流失的腰部客户。
-
-第九条，失败支付自动恢复。据MicroGaps 2026年报告，5-18%的MRR月经常性收入因失败支付流失，Stripe默认只恢复23%。Churnkey（音：彻恩凯）定价250美元月起对中小SaaS太贵。机会是"dunning（音：丹宁）催款管理"轻量SaaS，29到79美元月，目标全球所有用Stripe的SaaS创业者。
-
-第十条，40岁以上职业转型规划。据MicroNicheBrowser 5月数据，"career chan]]></description>
-      <pubDate>Sat, 01 Aug 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-08-01/app_research.mp3" length="7018028" type="audio/mpeg"/>
-      <guid isPermaLink="false">2026-08-01-app_research</guid>
-      <itunes:title>2026-08-01 APP调研商机日报</itunes:title>
+      <title>2026-07-30 APP调研商机日报</title>
+      <description><![CDATA[APP调研商机日报 2026-07-30]]></description>
+      <pubDate>Thu, 30 Jul 2026 08:30:00 +0800</pubDate>
+      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-30/app_research.mp3" length="6459827" type="audio/mpeg"/>
+      <guid isPermaLink="false">2026-07-30-app_research</guid>
+      <itunes:title>2026-07-30 APP调研商机日报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>00:07:18</itunes:duration>
-      <itunes:summary><![CDATA[早上好，Nicky。这是8月1日的APP调研商机日报语音摘要，共11条商机。
-
-第一条，GasBuddy（音：加斯巴迪）加油导航APP。它在Google Play只有3.0星，Trustpilot（音：恰斯特派勒特）1.3星，82万条评分里大量用户骂它"价格骗局"和"广告骚扰"。据Unstar和Trustpilot 2026年7月数据，GasBuddy原本是14万加油站导航必备APP，但近两年把返现改积分、广告加重、价格也不准。这是美国市场刚需被自家产品拖垮的典型案例。一人公司可以做"反GasBuddy"极简版，只用政府公开数据源，无广告无积分，一次性买断1.99美元就能切入。
-
-第二条，MapQuest（音：麦普奎斯特）老牌导航。Google Play 3.2星，被Google Maps和Waze夹击，但B端物流司机需求被忽视。据Unstar 2026年低分大APP盘点显示，大量用户把MapQuest当货车导航用。机会是做"轻量货车司机导航"，开源OSRM路由引擎+OSM数据，避开限重桥，零地图授权成本，9.99美元月订阅。目标是美国、欧洲的独立司机和小型物流公司。
-
-第三条，AccuWeather（音：艾丘维泽）天气APP。它的Android版只有2.55星，iOS版4.59星，分裂到离谱。据Marlvel AI和Unstar 2026年报告，差评集中在广告堵塞核心功能、Android加载10-20秒。一人公司可以做"反AccuWeather"极简天气APP，名字直接叫Quiet Weather或NoAds Weather，一次性1.99美元去广告，目标美国、英国、加拿大。
-
-第四条，Boldin（音：波丁）退休规划平台。2026年6月18日它公布数据：88,087户家庭、2470亿美元资产已经切向DIY退休规划。它的Plus订阅只要12美元月费，对比传统1% AUM顾问费31,000美元一年，价差215倍。据PR Newswire和Fidelity报道，这证明DIY退休规划是高粘性高LTV品类。机会是针对美国婴儿潮一代做"AI退休规划助手"极简对话版，9.99美元月费，Vibe Coding 2-3周出MVP。
-
-第五条，数字遗嘱和数字遗产。这是全球187亿美元市场，2035年预计637.5亿美元，年复合增长率14.6%，中国增速40.2%最快。据Morgan]]></itunes:summary>
+      <itunes:duration>00:06:43.63</itunes:duration>
+      <itunes:summary><![CDATA[APP调研商机日报 2026-07-30]]></itunes:summary>
     </item>
     <item>
-      <title>2026-07-31 盘前信号扫描</title>
-      <description><![CDATA[各位好，2026年7月31日AI量化盘前信号。
+      <title>2026-07-31 APP调研商机日报</title>
+      <description><![CDATA[早上好，Nicky。这是7月31日的APP调研商机日报语音摘要，共11条商机。
 
-昨日A股深度调整，今日早盘强势反攻。截至午盘：上证涨0.76%报3833点，深成指涨3.16%，创业板指涨5.04%，科创50涨5.91%，中证500涨3.45%，中证1000涨3.55%。全市场超4500只个股上涨，半日成交1.8万亿，较昨日放量3353亿。
 
-信号一，强势：AI应用与算力租赁板块爆发，中文在线、蓝色光标等20厘米涨停，美利云、云赛智联涨停。催化来自算力网十五五新增4万亿直接投资政策预期。
+第1条，Albert理财APP — 未经授权扣款+账户锁定。
+这是一条值得关注的商机机会。
 
-信号二，强势：半导体产业链活跃，盛景微、盛剑科技涨停；隔夜美股存储暴涨，闪迪涨25%、美光涨18%，形成传导。
 
-信号三，风险：银行股普跌，农业银行跌超4%，红利资产短期获利了结。
+第2条，RoadReady驾驶时间记录器 — 崩溃丢失学车记录。
+这是一条值得关注的商机机会。
 
-操作建议：成长主线未反转，均衡布局科技成长与金融红利。短线关注AI应用端回调机会，规避高位银行。仓位建议中性偏多，单只标的仓位不超过两成。
 
-以上是盘前信号，仅供参考，不构成投资建议。]]></description>
+第3条，Lidl Plus — 强制注册+奖励缩水引发用户不满。
+这是一条值得关注的商机机会。
+
+
+第4条，Claude APP — Top 10 Grossing但24.6%用户抱怨定价。
+这是一条值得关注的商机机会。
+
+
+第5条，Google One — $262M/月收入但4.1星偏低。
+这是一条值得关注的商机机会。
+
+
+第6条，Perplexity — 安卓Top 5增长，AI搜索替代传统搜索。
+这是一条值得关注的商机机会。
+
+
+第7条，GLP-1用药伴侣APP — 11万月搜索零专门产品。
+这是一条值得关注的商机机会。
+
+
+第8条，老年人护理协调APP — 需求巨大零竞品。
+这是一条值得关注的商机机会。
+
+
+第9条，OpenCut — 开源CapCut替代，74.9K星 GitHub ⭐。
+这是一条值得关注的商机机会。
+
+
+第10条，OfficeCLI — AI代理读写Office文件，18K星 GitHub ⭐。
+这是一条值得关注的商机机会。
+
+
+第11条，BabyGenie — AI宝宝生成器，上线1月160万下载。
+这是一条值得关注的商机机会。
+
+
+以上就是7月31日的全部11条商机摘要。详细报告请看HTML版。]]></description>
       <pubDate>Fri, 31 Jul 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-31/quant_signal.mp3" length="1507436" type="audio/mpeg"/>
-      <guid isPermaLink="false">2026-07-31-quant_signal</guid>
-      <itunes:title>2026-07-31 盘前信号扫描</itunes:title>
+      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-31/app_research.mp3" length="4343660" type="audio/mpeg"/>
+      <guid isPermaLink="false">2026-07-31-app_research</guid>
+      <itunes:title>2026-07-31 APP调研商机日报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>00:01:34</itunes:duration>
-      <itunes:summary><![CDATA[各位好，2026年7月31日AI量化盘前信号。
+      <itunes:duration>00:04:31.44</itunes:duration>
+      <itunes:summary><![CDATA[早上好，Nicky。这是7月31日的APP调研商机日报语音摘要，共11条商机。
 
-昨日A股深度调整，今日早盘强势反攻。截至午盘：上证涨0.76%报3833点，深成指涨3.16%，创业板指涨5.04%，科创50涨5.91%，中证500涨3.45%，中证1000涨3.55%。全市场超4500只个股上涨，半日成交1.8万亿，较昨日放量3353亿。
 
-信号一，强势：AI应用与算力租赁板块爆发，中文在线、蓝色光标等20厘米涨停，美利云、云赛智联涨停。催化来自算力网十五五新增4万亿直接投资政策预期。
+第1条，Albert理财APP — 未经授权扣款+账户锁定。
+这是一条值得关注的商机机会。
 
-信号二，强势：半导体产业链活跃，盛景微、盛剑科技涨停；隔夜美股存储暴涨，闪迪涨25%、美光涨18%，形成传导。
 
-信号三，风险：银行股普跌，农业银行跌超4%，红利资产短期获利了结。
+第2条，RoadReady驾驶时间记录器 — 崩溃丢失学车记录。
+这是一条值得关注的商机机会。
 
-操作建议：成长主线未反转，均衡布局科技成长与金融红利。短线关注AI应用端回调机会，规避高位银行。仓位建议中性偏多，单只标的仓位不超过两成。
 
-以上是盘前信号，仅供参考，不构成投资建议。]]></itunes:summary>
-    </item>
-    <item>
-      <title>2026-07-31 CEO早间简报</title>
-      <description><![CDATA[各位好，2026年7月31日CEO早间简报。
+第3条，Lidl Plus — 强制注册+奖励缩水引发用户不满。
+这是一条值得关注的商机机会。
 
-宏观面：美国6月PCE物价指数六年来首次环比下降0.1%，通胀明显降温，白宫贸易顾问呼吁美联储考虑降息。德国7月CPI升至2.8%，欧洲央行9月加息预期升温，全球货币政策分化加剧。
 
-美股昨夜全线大涨：纳指涨2.78%，标普500涨1.66%，道指涨1.19%。费城半导体指数暴涨超8%，存储概念闪迪涨25%、美光涨18%，AI交易强劲反攻。驱动因素有三点：微软和Meta确认不放缓AI投资、亚马逊上调资本开支、AI对冲基金Situational Awareness高杠杆爆仓被视为触底信号。
+第4条，Claude APP — Top 10 Grossing但24.6%用户抱怨定价。
+这是一条值得关注的商机机会。
 
-巨头财报：微软涨15.5%创2008年来最大单日涨幅，市值增约4500亿美元；三星第二季度净利润暴增1299.9%，AI芯片占99%利润；苹果第三财季营收增16%但大中华区与服务逊色，盘后跌超8%；亚马逊云业务超预期但指引保守。
 
-A股昨日调整，上证跌0.62%、创业板跌3.97%、科创50跌5.38%，半导体与算力硬件持续杀跌，大消费大金融逆势走强。今日关注：政治局会议定调下半年经济，算力网十五五新增4万亿直接投资预期。
+第5条，Google One — $262M/月收入但4.1星偏低。
+这是一条值得关注的商机机会。
 
-组织待办：第一，审视AI投入节奏，警惕估值泡沫；第二，关注存储芯片供不应求的供应链机会；第三，大金融红利资产作为防御配置。
 
-以上是CEO早间简报。]]></description>
-      <pubDate>Fri, 31 Jul 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-31/ceo_morning.mp3" length="1852460" type="audio/mpeg"/>
-      <guid isPermaLink="false">2026-07-31-ceo_morning</guid>
-      <itunes:title>2026-07-31 CEO早间简报</itunes:title>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>00:01:55</itunes:duration>
-      <itunes:summary><![CDATA[各位好，2026年7月31日CEO早间简报。
+第6条，Perplexity — 安卓Top 5增长，AI搜索替代传统搜索。
+这是一条值得关注的商机机会。
 
-宏观面：美国6月PCE物价指数六年来首次环比下降0.1%，通胀明显降温，白宫贸易顾问呼吁美联储考虑降息。德国7月CPI升至2.8%，欧洲央行9月加息预期升温，全球货币政策分化加剧。
 
-美股昨夜全线大涨：纳指涨2.78%，标普500涨1.66%，道指涨1.19%。费城半导体指数暴涨超8%，存储概念闪迪涨25%、美光涨18%，AI交易强劲反攻。驱动因素有三点：微软和Meta确认不放缓AI投资、亚马逊上调资本开支、AI对冲基金Situational Awareness高杠杆爆仓被视为触底信号。
+第7条，GLP-1用药伴侣APP — 11万月搜索零专门产品。
+这是一条值得关注的商机机会。
 
-巨头财报：微软涨15.5%创2008年来最大单日涨幅，市值增约4500亿美元；三星第二季度净利润暴增1299.9%，AI芯片占99%利润；苹果第三财季营收增16%但大中华区与服务逊色，盘后跌超8%；亚马逊云业务超预期但指引保守。
 
-A股昨日调整，上证跌0.62%、创业板跌3.97%、科创50跌5.38%，半导体与算力硬件持续杀跌，大消费大金融逆势走强。今日关注：政治局会议定调下半年经济，算力网十五五新增4万亿直接投资预期。
+第8条，老年人护理协调APP — 需求巨大零竞品。
+这是一条值得关注的商机机会。
 
-组织待办：第一，审视AI投入节奏，警惕估值泡沫；第二，关注存储芯片供不应求的供应链机会；第三，大金融红利资产作为防御配置。
 
-以上是CEO早间简报。]]></itunes:summary>
-    </item>
-    <item>
-      <title>2026-07-31 AI行业日报</title>
-      <description><![CDATA[各位好，2026年7月31日AI行业日报。
+第9条，OpenCut — 开源CapCut替代，74.9K星 GitHub ⭐。
+这是一条值得关注的商机机会。
 
-重磅一：Anthropic拟获150亿美元银团贷款，在得州建1.6吉瓦自建天然气电厂的数据中心园区，谷歌以自身AAA信用提供担保并供应TPU，换取约20%股权。AI基础设施融资模式质变，从股权烧钱转向大厂担保加银行贷款加锁定电力。OpenAI也在谈2500亿美元俄亥俄园区。
 
-重磅二：OpenAI宣布GPT-5.6系列最高降价80%，最快模型Luna价格暴降，自动批准模式成本降十倍。CFO披露7月单月新增年化收入超整个二季度，年经常性收入或逼近600亿美元，IPO申请已秘密递交。
+第10条，OfficeCLI — AI代理读写Office文件，18K星 GitHub ⭐。
+这是一条值得关注的商机机会。
 
-重磅三：谷歌DeepMind发布Gemini Robotics 2、ER 2与On-Device 2，实现人形机器人从头到脚全身控制，拧灯泡成功率92%，通过AI Studio开放。谷歌重启十余年机器人战略。
 
-重磅四：美国AI客服商Encore AI完成A轮融资，用企业对话训练语音代理帮企业降本增效。
+第11条，BabyGenie — AI宝宝生成器，上线1月160万下载。
+这是一条值得关注的商机机会。
 
-行业信号：第一，AI军备竞赛进入借钱也要上的重资产阶段，电力成为真正瓶颈；第二，模型价格战白热化，应用层创业者红利扩大；第三，机器人从实验室走向可编排控制，配套软件机会打开。
 
-风险提醒：前OpenAI研究员旗下200亿对冲基金Situational Awareness因高杠杆重仓AI暴跌、被迫平仓，城堡投资接盘160亿美元。AI主题投资波动剧烈，注意仓位管理。
-
-以上是AI行业日报。]]></description>
-      <pubDate>Fri, 31 Jul 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-31/ai_daily.mp3" length="1837484" type="audio/mpeg"/>
-      <guid isPermaLink="false">2026-07-31-ai_daily</guid>
-      <itunes:title>2026-07-31 AI行业日报</itunes:title>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>00:01:54</itunes:duration>
-      <itunes:summary><![CDATA[各位好，2026年7月31日AI行业日报。
-
-重磅一：Anthropic拟获150亿美元银团贷款，在得州建1.6吉瓦自建天然气电厂的数据中心园区，谷歌以自身AAA信用提供担保并供应TPU，换取约20%股权。AI基础设施融资模式质变，从股权烧钱转向大厂担保加银行贷款加锁定电力。OpenAI也在谈2500亿美元俄亥俄园区。
-
-重磅二：OpenAI宣布GPT-5.6系列最高降价80%，最快模型Luna价格暴降，自动批准模式成本降十倍。CFO披露7月单月新增年化收入超整个二季度，年经常性收入或逼近600亿美元，IPO申请已秘密递交。
-
-重磅三：谷歌DeepMind发布Gemini Robotics 2、ER 2与On-Device 2，实现人形机器人从头到脚全身控制，拧灯泡成功率92%，通过AI Studio开放。谷歌重启十余年机器人战略。
-
-重磅四：美国AI客服商Encore AI完成A轮融资，用企业对话训练语音代理帮企业降本增效。
-
-行业信号：第一，AI军备竞赛进入借钱也要上的重资产阶段，电力成为真正瓶颈；第二，模型价格战白热化，应用层创业者红利扩大；第三，机器人从实验室走向可编排控制，配套软件机会打开。
-
-风险提醒：前OpenAI研究员旗下200亿对冲基金Situational Awareness因高杠杆重仓AI暴跌、被迫平仓，城堡投资接盘160亿美元。AI主题投资波动剧烈，注意仓位管理。
-
-以上是AI行业日报。]]></itunes:summary>
-    </item>
-    <item>
-      <title>2026-07-29 盘后复盘</title>
-      <description><![CDATA[Nicky好，这是7月30日的A股量化复盘。
-
-今天大盘调整收阴。上证指数收3804点，跌0.62%；深证成指收13285点，跌2.73%；创业板指收3244点，跌3.97%。两市成交2.34万亿，比昨天放量462亿。涨跌家数1768比3635，涨停56家、跌停76家。风格切换明显，白酒、银行、保险、汽车整车这些大消费大金融领涨，半导体、CPO、激光这些科技成长领跌。
-
-信号引擎方面，当前没有持仓，策略A今天扫了50只流动池，零突破候选；策略B尾盘也是零信号。账本signal_ledger.json还是空数组，连续第三天空仓观望。
-
-核心池里需要重点关注的：金 山 办 公 涨2.69%，已经连涨4天、累计涨11%，20日涨幅17%已大幅突破，短线高位震荡，明天看回踩能不能企稳；巨人网络涨2.59%，昨天刚涨停，今天盘中触板但回落，振幅7.89%，短线有分歧；诺普信涨2.31%，农化板块走强，20日涨幅7.75%接近突破阈值，明早盯一下能不能放量确认。风险这边，高德红外直接跌停9.99%，军工电子板块整体跌3.74%，是核心池里第一个跌停的，要查下是不是有板块性风险；涛涛车业也跌了6.6%，振幅11%，破位了要远离。
-
-策略A明早09:25没有候选要确认，策略B明天下午15点继续扫尾盘，重点看诺普信能不能突破20日新高、金山办公回踩到不到位。整体看今天虽然普跌放量，但消费金融这条线还在撑指数，如果明天沪指能守住3800，结构性机会就还在。
-
-以上就是今日量化复盘。明天盘前见。
-]]></description>
-      <pubDate>Wed, 29 Jul 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
-      <guid isPermaLink="false">2026-07-29-quant_review</guid>
-      <itunes:title>2026-07-29 盘后复盘</itunes:title>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>00:03:19</itunes:duration>
-      <itunes:summary><![CDATA[Nicky好，这是7月30日的A股量化复盘。
-
-今天大盘调整收阴。上证指数收3804点，跌0.62%；深证成指收13285点，跌2.73%；创业板指收3244点，跌3.97%。两市成交2.34万亿，比昨天放量462亿。涨跌家数1768比3635，涨停56家、跌停76家。风格切换明显，白酒、银行、保险、汽车整车这些大消费大金融领涨，半导体、CPO、激光这些科技成长领跌。
-
-信号引擎方面，当前没有持仓，策略A今天扫了50只流动池，零突破候选；策略B尾盘也是零信号。账本signal_ledger.json还是空数组，连续第三天空仓观望。
-
-核心池里需要重点关注的：金 山 办 公 涨2.69%，已经连涨4天、累计涨11%，20日涨幅17%已大幅突破，短线高位震荡，明天看回踩能不能企稳；巨人网络涨2.59%，昨天刚涨停，今天盘中触板但回落，振幅7.89%，短线有分歧；诺普信涨2.31%，农化板块走强，20日涨幅7.75%接近突破阈值，明早盯一下能不能放量确认。风险这边，高德红外直接跌停9.99%，军工电子板块整体跌3.74%，是核心池里第一个跌停的，要查下是不是有板块性风险；涛涛车业也跌了6.6%，振幅11%，破位了要远离。
-
-策略A明早09:25没有候选要确认，策略B明天下午15点继续扫尾盘，重点看诺普信能不能突破20日新高、金山办公回踩到不到位。整体看今天虽然普跌放量，但消费金融这条线还在撑指数，如果明天沪指能守住3800，结构性机会就还在。
-
-以上就是今日量化复盘。明天盘前见。
-]]></itunes:summary>
-    </item>
-    <item>
-      <title>2026-07-29 CEO晚间简报</title>
-      <description><![CDATA[今日8个项目复盘摘要]]></description>
-      <pubDate>Wed, 29 Jul 2026 08:30:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
-      <guid isPermaLink="false">2026-07-29-ceo_evening</guid>
-      <itunes:title>2026-07-29 CEO晚间简报</itunes:title>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:duration>00:03:19</itunes:duration>
-      <itunes:summary><![CDATA[今日8个项目复盘摘要]]></itunes:summary>
+以上就是7月31日的全部11条商机摘要。详细报告请看HTML版。]]></itunes:summary>
     </item>
   </channel>
 </rss>
