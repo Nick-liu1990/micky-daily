@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <atom:link href="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/podcast.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/podcast.xml" rel="self" type="application/rss+xml"/>
     <title>MICKY每日简报</title>
     <link>https://nick-liu1990.github.io/micky-daily/</link>
     <language>zh-CN</language>
     <description>AI驱动的每日播报，每天早间推送APP市场商机语音播报，刘亦菲音色。涵盖低垂果实、高付费率品类、供需失衡和新兴趋势四大维度。</description>
-    <lastBuildDate>Tue, 04 Aug 2026 10:36:27 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 12:40:36 +0800</lastBuildDate>
     <itunes:author>Micky</itunes:author>
     <itunes:summary>AI驱动的每日播报，每天早间推送APP市场商机语音播报，刘亦菲音色。涵盖低垂果实、高付费率品类、供需失衡和新兴趋势四大维度。</itunes:summary>
     <itunes:type>episodic</itunes:type>
@@ -14,9 +14,9 @@
       <itunes:category text="Tech News"/>
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
-    <itunes:image href="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/podcast-cover.jpg"/>
+    <itunes:image href="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/podcast-cover.jpg"/>
     <image>
-      <url>https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/podcast-cover.jpg</url>
+      <url>https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/podcast-cover.jpg</url>
       <title>MICKY每日简报</title>
       <link>https://nick-liu1990.github.io/micky-daily/</link>
     </image>
@@ -42,7 +42,7 @@
 
 第九条，新兴市场短剧的剪辑工具蓝海。字节的PineDrama去年12月发布、今年3月大规模推广，累计下载逼近7000万，印尼和巴西两个市场贡献了82%，6月稳居两国Google Play总榜前三。新兴市场短剧爆发，但本地化剪辑、字幕、投放工具稀缺。一人公司可以做面向印尼、巴西的短剧AI剪辑加多语字幕工具，按视频时长订阅，不必]]></description>
       <pubDate>Tue, 04 Aug 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-08-04/app_research.mp3" length="8482220" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-08-04/app_research.mp3" length="4241074" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-08-04-app_research</guid>
       <itunes:title>APP调研商机日报 2026-08-04</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -96,7 +96,7 @@ Appalize对2026年iOSTop应用订阅价分析显示：Dating中位数$29.99/月�
 BigIdeasDB按差评量给App品类排名：N
 以上是本期精华摘要。]]></description>
       <pubDate>Mon, 03 Aug 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-08-03/app_research.mp3" length="3863852" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-08-03/app_research.mp3" length="3863852" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-08-03-app_research</guid>
       <itunes:title>APP调研商机日报 2026-08-03</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -165,7 +165,7 @@ Appalize对2026年iOSTop应用订阅价分析显示：Dating中位数$29.99/月�
 BigIdeasDB按差评量给App品类排名：N
 以上是本期精华摘要。]]></description>
       <pubDate>Sun, 02 Aug 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-08-02/app_research.mp3" length="3869612" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-08-02/app_research.mp3" length="3869612" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-08-02-app_research</guid>
       <itunes:title>APP调研商机日报 2026-08-02</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -219,7 +219,7 @@ BigIdeasDB按差评量给App品类排名：N
 
 第十条，40岁以上职业转型规划。据MicroNicheBrowser 5月数据，"career chan]]></description>
       <pubDate>Sat, 01 Aug 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-08-01/app_research.mp3" length="7018028" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-08-01/app_research.mp3" length="3509228" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-08-01-app_research</guid>
       <itunes:title>APP调研商机日报 2026-08-01</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -287,7 +287,7 @@ BigIdeasDB按差评量给App品类排名：N
 
 以上就是7月31日的全部11条商机摘要。详细报告请看HTML版。]]></description>
       <pubDate>Fri, 31 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-31/app_research.mp3" length="4343660" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-31/app_research.mp3" length="2171758" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-31-app_research</guid>
       <itunes:title>APP调研商机日报 2026-07-31</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -357,7 +357,7 @@ A股昨日调整，上证跌0.62%、创业板跌3.97%、科创50跌5.38%，半�
 
 以上是CEO早间简报。]]></description>
       <pubDate>Fri, 31 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-31/ceo_morning.mp3" length="1852460" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-31/ceo_morning.mp3" length="1852460" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-31-ceo_morning</guid>
       <itunes:title>2026-07-31 CEO早间简报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -394,7 +394,7 @@ A股昨日调整，上证跌0.62%、创业板跌3.97%、科创50跌5.38%，半�
 
 以上是AI行业日报。]]></description>
       <pubDate>Fri, 31 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-31/ai_daily.mp3" length="1837484" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-31/ai_daily.mp3" length="1837484" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-31-ai_daily</guid>
       <itunes:title>2026-07-31 AI行业日报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -431,7 +431,7 @@ A股昨日调整，上证跌0.62%、创业板跌3.97%、科创50跌5.38%，半�
 
 以上是盘前信号，仅供参考，不构成投资建议。]]></description>
       <pubDate>Fri, 31 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-31/quant_signal.mp3" length="1507436" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-31/quant_signal.mp3" length="1507436" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-31-quant_signal</guid>
       <itunes:title>2026-07-31 盘前信号扫描</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -454,7 +454,7 @@ A股昨日调整，上证跌0.62%、创业板跌3.97%、科创50跌5.38%，半�
       <title>APP调研商机日报 2026-07-30</title>
       <description><![CDATA[APP调研商机日报 2026-07-30 - 刘亦菲音色语音播报]]></description>
       <pubDate>Thu, 30 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-30/app_research.mp3" length="6459827" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-30/app_research.mp3" length="3230499" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-30-app_research</guid>
       <itunes:title>APP调研商机日报 2026-07-30</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -495,7 +495,7 @@ Anthropic的Claude iOS APP虽然技术口碑好，但App Store评论中24.6%明�
 Adapty发布的2026年订阅APP定价基准报告显示，不同品类的平均订阅价格差异显著：健康健身类平均$9.99/月（年付$59.99），生产力工具类平均$4.99/月（年付$29.99），教育学习类平均$6.99/月。更关键的是数据揭示了"定价天花板"：超
 以上是本期精华摘要。]]></description>
       <pubDate>Wed, 29 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-29/app_research.mp3" length="371564" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-29/app_research.mp3" length="371564" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-29-app_research</guid>
       <itunes:title>APP调研商机日报 2026-07-29</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -525,7 +525,7 @@ Anthropic的Claude iOS APP虽然技术口碑好，但App Store评论中24.6%明�
       <title>2026-07-29 CEO晚间简报</title>
       <description><![CDATA[今日8个项目复盘摘要]]></description>
       <pubDate>Wed, 29 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-29-ceo_evening</guid>
       <itunes:title>2026-07-29 CEO晚间简报</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -547,7 +547,7 @@ Anthropic的Claude iOS APP虽然技术口碑好，但App Store评论中24.6%明�
 以上就是今日量化复盘。明天盘前见。
 ]]></description>
       <pubDate>Wed, 29 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-29/daily_audio.mp3" length="3186900" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-29-quant_review</guid>
       <itunes:title>2026-07-29 盘后复盘</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -610,7 +610,7 @@ xAI开源的grok-build项目（5928⭐，2周增长）定义了"Coding Agent Har
 这
 以上是本期精华摘要。]]></description>
       <pubDate>Tue, 28 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-28/app_research.mp3" length="352556" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-28/app_research.mp3" length="352556" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-28-app_research</guid>
       <itunes:title>APP调研商机日报 2026-07-28</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -704,7 +704,7 @@ Duolingo月订阅收入稳定在$45M+，Super会员渗透率持续提升。核�
 
 以上就是7月27日的全部13条商机摘要。详细报告请看HTML版。]]></description>
       <pubDate>Mon, 27 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-27/app_research.mp3" length="351404" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-27/app_research.mp3" length="351404" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-27-app_research</guid>
       <itunes:title>APP调研商机日报 2026-07-27</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -815,7 +815,7 @@ Dating是所有品类中客单价最高的——月付中位$29.99，年付中�
 增长逻辑：抖音全域流量输送+持续补贴+极简交易界面（无信息流干扰，只做搜券/比价/下单/核销）。关键信号：大厂拆分交易心智的思路——从"内容附属功能"升级为"独立交易平台"。订单核销率提升23%，说明独立APP确实解决了主站内的痛点。对独立开发者的启示：小团队做不到抖音的流量规模，但可以做"垂直领域极简交易工具"——宠物服
 以上是本期精华摘要。]]></description>
       <pubDate>Sun, 26 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-26/app_research.mp3" length="4311980" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-26/app_research.mp3" length="2155876" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-26-app_research</guid>
       <itunes:title>APP调研商机日报 2026-07-26</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -900,7 +900,7 @@ Meta用"一句话生成可交互小游戏"的概念切入Vibe Coding赛道。Poc
 做一个干净、快速、可靠的外服游戏APK下载管理器。不需要自己做
 以上是本期精华摘要。]]></description>
       <pubDate>Sat, 25 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-25/app_research.mp3" length="362348" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-25/app_research.mp3" length="362348" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-25-app_research</guid>
       <itunes:title>APP调研商机日报 2026-07-25</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -958,7 +958,7 @@ Meta用"一句话生成可交互小游戏"的概念切入Vibe Coding赛道。Poc
 
 以上就是7月24日的全部4条商机摘要。详细报告请看HTML版。]]></description>
       <pubDate>Fri, 24 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-24/app_research.mp3" length="2971628" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-24/app_research.mp3" length="2971628" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-24-app_research</guid>
       <itunes:title>APP调研商机日报 2026-07-24</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -1023,7 +1023,7 @@ Meta用"一句话生成可交互小游戏"的概念切入Vibe Coding赛道。Poc
 3亿+
 以上是本期精华摘要。]]></description>
       <pubDate>Thu, 23 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-23/app_research.mp3" length="347948" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-23/app_research.mp3" length="347948" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-23-app_research</guid>
       <itunes:title>APP调研商机日报 2026-07-23</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
@@ -1100,7 +1100,7 @@ Dating是所有品类中客单价最高的——月付中位$29.99，年付中�
 增长逻辑：抖音全域流量输送+持续补贴+极简交易界面（无信息流干扰，只做搜券/比价/下单/核销）。关键信号：大厂拆分交易心智的思路——从"内容附属功能"升级为"独立交易平台"。订单核销率提升23%，说明独立APP确实解决了主站内的痛点。对独立开发者的启示：小团队做不到抖音的流量规模，但可以做"垂直领域极简交易工具"——宠物服
 以上是本期精华摘要。]]></description>
       <pubDate>Wed, 22 Jul 2026 08:00:00 +0800</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/Nick-liu1990/micky-daily/main/audio/2026-07-22/app_research.mp3" length="4393196" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/audio/2026-07-22/app_research.mp3" length="2196627" type="audio/mpeg"/>
       <guid isPermaLink="false">2026-07-22-app_research</guid>
       <itunes:title>APP调研商机日报 2026-07-22</itunes:title>
       <itunes:episodeType>full</itunes:episodeType>
