@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/shows/finance/podcast.xml" rel="self" type="application/rss+xml"/>
+    <title>AI财经财富频道</title>
+    <link>https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/shows/finance/</link>
+    <language>zh-CN</language>
+    <description>AI驱动的每日财经播报：跟踪金价、美元对人民币汇率、美股与A股走势，解读当日关键新闻，提供客观的市场分析与案例参考。每天早上7点更新，开车路上听懂一天的钱袋子。</description>
+    <lastBuildDate>Mon, 10 Aug 2026 17:17:00 +0800</lastBuildDate>
+    <itunes:author>Micky</itunes:author>
+    <itunes:summary>AI驱动的每日财经播报：跟踪金价、美元对人民币汇率、美股与A股走势，解读当日关键新闻，提供客观的市场分析与案例参考。每天早上7点更新，开车路上听懂一天的钱袋子。</itunes:summary>
+    <itunes:type>episodic</itunes:type>
+    <itunes:category text="Business">
+      <itunes:category text="Investing"/>
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:image href="https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/shows/finance/cover.jpg"/>
+    <image>
+      <url>https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/shows/finance/cover.jpg</url>
+      <title>AI财经财富频道</title>
+      <link>https://cdn.jsdelivr.net/gh/Nick-liu1990/micky-daily@main/shows/finance/</link>
+    </image>
+  </channel>
+</rss>
